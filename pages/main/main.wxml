@@ -1,2 +1,77 @@
 <!--pages/main/main.wxml-->
-<text>pages/main/main.wxml</text>
+<view class="pageMain">
+  <navbar page-name="你当前页面的名字" show-nav="{{false}}"></navbar>
+  <!-- pc -->
+  <view class='manage'>
+    <view class='top'>功能列表</view>
+    <view class='box'>
+      <ul>
+        <li bindtap="router" id="tapTest" data-data="partmentListPC" style="{{w>=360?'width:90px':''}}">
+          <image src='../images/menu4.png'></image>
+          <view class='tag'>部门列表</view>
+        </li>
+        <li bindtap="router" id="tapTest" data-data="listPC" style="{{w>=360?'width:90px':''}}">
+          <image src='../images/menu1.png'></image>
+          <view class='tag'>设备列表</view>
+        </li>
+        <li bindtap="router" id="tapTest" data-data="insertPC" style="{{w>=360?'width:90px':''}}">
+          <image src='../images/menu3.png'></image>
+          <view class='tag'>增加设备</view>
+        </li>
+      </ul>
+    </view>
+  </view>
+  <!-- print -->
+  <view class='manage'>
+    <view class='top'>打印机</view>
+    <view class='box'>
+      <ul>
+        <li bindtap="router" id="tapTest" data-data="partmentListPrint" style="{{w>=360?'width:90px':''}}">
+          <image src='../images/menu4.png'></image>
+          <view class='tag'>部门列表</view>
+        </li>
+        <li bindtap="router" id="tapTest" data-data="listPrint" style="{{w>=360?'width:90px':''}}">
+          <image src='../images/menu1.png'></image>
+          <view class='tag'>设备列表</view>
+        </li>
+        <li bindtap="router" id="tapTest" data-data="insertPrint" style="{{w>=360?'width:90px':''}}">
+          <image src='../images/menu3.png'></image>
+          <view class='tag'>增加设备</view>
+        </li>
+      </ul>
+    </view>
+  </view>
+  <!-- inventory -->
+  <view class='manage'>
+    <view class='top'>库存</view>
+    <view class='box'>
+      <ul>
+        <li bindtap="router" id="tapTest" data-data="inventory" style="{{w>=360?'width:90px':''}}">
+          <image src='../images/menu4.png'></image>
+          <view class='tag'>存货档案</view>
+        </li>
+        <li bindtap="router" id="tapTest" data-data="insertInv" style="{{w>=360?'width:90px':''}}">
+          <image src='../images/menu1.png'></image>
+          <view class='tag'>增加档案</view>
+        </li>
+        <li bindtap="router" id="tapTest" data-data="in" style="{{w>=360?'width:90px':''}}">
+          <image src='../images/menu3.png'></image>
+          <view class='tag'>入库</view>
+        </li>
+        <li bindtap="router" id="tapTest" data-data="out" style="{{w>=360?'width:90px':''}}">
+          <image src='../images/menu3.png'></image>
+          <view class='tag'>出库</view>
+        </li>
+        <li bindtap="router" id="tapTest" data-data="inoutlist" style="{{w>=360?'width:90px':''}}">
+          <image src='../images/menu3.png'></image>
+          <view class='tag'>出入库记录</view>
+        </li>
+        <li bindtap="router" id="tapTest" data-data="resetCount" style="{{w>=360?'width:90px':''}}">
+          <image src='../images/menu3.png'></image>
+          <view class='tag'>整理现存量</view>
+        </li>
+      </ul>
+    </view>
+  </view>
+
+</view>

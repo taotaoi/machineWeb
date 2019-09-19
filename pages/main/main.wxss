@@ -1,1 +1,40 @@
 /* pages/main/main.wxss */
+.pageMain{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+.manage {
+  width: 100%;
+}
+.manage .top{
+  height: 30px;
+  width: 100%;
+  padding-left: 5px;
+  line-height: 30px;
+  border-bottom: 1px solid #ccc;
+}
+.box ul{
+  display: flex;
+  flex-wrap: wrap;
+}
+li {
+  height: 70px;
+  width: 106px;
+  margin: 5px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+image{
+  height:40px;
+  width: 40px; 
+ 
+}
+li .tag{
+  line-height: 30px;
+  height: 30px;
+
+}
