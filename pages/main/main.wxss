@@ -7,6 +7,7 @@
 }
 .manage {
   width: 100%;
+  margin-bottom: 20px;
 }
 .manage .top{
   height: 30px;
