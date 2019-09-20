@@ -1,20 +1,18 @@
-// pages/machine/list/list.js
-var axMa = require('../../ax/machine/machine.js');
+// pages/fix/fixing/fixing.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    machineList:[]
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log("op");
-    this.init();
+
   },
 
   /**
@@ -59,23 +57,10 @@ Page({
 
   },
 
-  init(){
-    var that = this;
-    wx.showLoading({
-      title: 'waiting',
-    })
-    axMa.getAllList().then(function(data){
-      wx.hideLoading();
-      console.log(data);
-      that.setData({
-        machineList: data.data.data
-      });
-    });
-  },
-  linkToMa(par){
-    var id = par.currentTarget.dataset.data;
-    wx.navigateTo({   //该调整会在目标页面生成返回的箭头图标
-      url: '../show/show?id=' + id,
-    })
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
   }
 })

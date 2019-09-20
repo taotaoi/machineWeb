@@ -1,7 +1,7 @@
 <!--pages/machine/list/list.wxml-->
 <navbar page-name="你当前页面的名字"></navbar>
 <view class='fa'>
-  <view class='box' wx:for="{{machineList}}" wx:key="item.machineid" bindtap='linkToPc' data-data='{{item.id}}'>
+  <view class='box' wx:for="{{machineList}}" wx:key="item.machineid" bindtap='linkToMa' data-data='{{item.id}}'>
     <view class='part1'>
       <view class='tag1'>{{item.department}}</view>
       <view class='tag2'>{{item.installaddr}}</view>

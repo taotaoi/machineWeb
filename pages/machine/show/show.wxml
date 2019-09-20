@@ -1,6 +1,6 @@
 <!--pages/machine/show/show.wxml-->
 <view class="fa">
-<navbar page-name="你当前页面的名字"></navbar>
+<navbar page-name="{{machine.machineid+'  '+machine.name}}"></navbar>
   <!-- 顶部导航tab 开始 -->
   <view class='navTab'>
     <ul>
@@ -20,58 +20,34 @@
 <!-- Tab1显示区域 开始 -->
     <view class="content" wx:if="{{showTab.tab1}}">
     <ul>
-      <li class="machineTile">{{machineList.name}}</li>
+      <li class="machineTile">{{machine.machineid+"  "+machine.name}}</li>
       <li>
-        <span class="ListTitle">物资编号</span>
-        <text class='ListVal'>{{machineList.id}}</text>
+        <span class="ListTitle">设备类型</span>
+        <text class='ListVal'>{{machine.type}}</text>
       </li>
       <li>
-        <span class="ListTitle">设备型号</span>
-        <text class='ListVal'>{{machineList.model}}</text>
+        <span class="ListTitle">规格型号</span>
+        <text class='ListVal'>{{machine.model}}</text>
       </li>
       <li>
-        <span class="ListTitle">生产车间</span>
-        <text class='ListVal'>{{machineList.room}}</text>
-      </li>
-      <li>
-        <span class="ListTitle">制造单位</span>
-        <text class='ListVal'>{{machineList.makeLocal}}</text>
-      </li>
-      <li>
-        <span class="ListTitle">出厂日期</span>
-        <text class='ListVal'>{{machineList.makeDay}}</text>
-      </li>
-      <li>
-        <span class="ListTitle">出厂编号</span>
-        <text class='ListVal'>{{machineList.makeId}}</text>
+        <span class="ListTitle">购置日期</span>
+        <text class='ListVal'>{{machine.payday}}</text>
       </li>
       <li>
         <span class="ListTitle">启用日期</span>
-        <text class='ListVal'>{{machineList.usedDay}}</text>
+        <text class='ListVal'>{{machine.usedday}}</text>
       </li>
       <li>
-        <span class="ListTitle">资产状态</span>
-        <text class='ListVal'>{{machineList.status}}</text>
+        <span class="ListTitle">设备状态</span>
+        <text class='ListVal'>{{machine.status}}</text>
       </li>
       <li>
-        <span class="ListTitle">设备分类</span>
-        <text class='ListVal'>{{machineList.type}}</text>
+        <span class="ListTitle">备注信息</span>
+        <text class='ListVal'>{{machine.describe}}</text>
       </li>
       <li>
-        <span class="ListTitle">折旧年限</span>
-        <text class='ListVal'>{{machineList.endYear}}</text>
-      </li>
-      <li>
-        <span class="ListTitle">大修周期</span>
-        <text class='ListVal'>{{machineList.fixCycle}}</text>
-      </li>
-      <li>
-        <span class="ListTitle">生产线</span>
-        <text class='ListVal'>{{machinroduceLine}}</text>
-      </li>
-      <li>
-        <span class="ListTitle">备注</span>
-        <text class='ListVal'>{{machineList.other}}</text>
+        <span class="ListTitle">设备图片</span>
+        <text class='ListVal'>{{machine.image}}</text>
       </li>
     </ul>
     </view>
@@ -80,58 +56,25 @@
     <!-- Tab2显示区域 开始 -->
     <view class="content" wx:if="{{showTab.tab2}}">
     <ul>
-      <li class="machineTile">{{machineList.name}}</li>
       <li>
-        <span class="ListTitle">物资编号2</span>
-        <text class='ListVal'>{{machineList.id}}</text>
+        <span class="ListTitle">使用部门</span>
+        <text class='ListVal'>{{machine.department}}</text>
       </li>
       <li>
-        <span class="ListTitle">设备型号</span>
-        <text class='ListVal'>{{machineList.model}}</text>
+        <span class="ListTitle">安装地点</span>
+        <text class='ListVal'>{{machine.installaddr}}</text>
       </li>
       <li>
-        <span class="ListTitle">生产车间</span>
-        <text class='ListVal'>{{machineList.room}}</text>
+        <span class="ListTitle">使用人</span>
+        <text class='ListVal'>{{machine.user}}</text>
       </li>
       <li>
-        <span class="ListTitle">制造单位</span>
-        <text class='ListVal'>{{machineList.makeLocal}}</text>
+        <span class="ListTitle">验收人</span>
+        <text class='ListVal'>{{machine.acceptor}}</text>
       </li>
       <li>
-        <span class="ListTitle">出厂日期</span>
-        <text class='ListVal'>{{machineList.makeDay}}</text>
-      </li>
-      <li>
-        <span class="ListTitle">出厂编号</span>
-        <text class='ListVal'>{{machineList.makeId}}</text>
-      </li>
-      <li>
-        <span class="ListTitle">启用日期</span>
-        <text class='ListVal'>{{machineList.usedDay}}</text>
-      </li>
-      <li>
-        <span class="ListTitle">资产状态</span>
-        <text class='ListVal'>{{machineList.status}}</text>
-      </li>
-      <li>
-        <span class="ListTitle">设备分类</span>
-        <text class='ListVal'>{{machineList.type}}</text>
-      </li>
-      <li>
-        <span class="ListTitle">折旧年限</span>
-        <text class='ListVal'>{{machineList.endYear}}</text>
-      </li>
-      <li>
-        <span class="ListTitle">大修周期</span>
-        <text class='ListVal'>{{machineList.fixCycle}}</text>
-      </li>
-      <li>
-        <span class="ListTitle">生产线</span>
-        <text class='ListVal'>{{machinroduceLine}}</text>
-      </li>
-      <li>
-        <span class="ListTitle">备注</span>
-        <text class='ListVal'>{{machineList.other}}</text>
+        <span class="ListTitle">验收情况</span>
+        <text class='ListVal'>{{machine.accept}}</text>
       </li>
     </ul>
     </view>
@@ -140,58 +83,25 @@
     <!-- Tab3显示区域 开始 -->
     <view class="content" wx:if="{{showTab.tab3}}">
     <ul>
-      <li class="machineTile">{{machineList.name}}</li>
       <li>
-        <span class="ListTitle">物资编号3</span>
-        <text class='ListVal'>{{machineList.id}}</text>
-      </li>
-      <li>
-        <span class="ListTitle">设备型号</span>
-        <text class='ListVal'>{{machineList.model}}</text>
-      </li>
-      <li>
-        <span class="ListTitle">生产车间</span>
-        <text class='ListVal'>{{machineList.room}}</text>
-      </li>
-      <li>
-        <span class="ListTitle">制造单位</span>
-        <text class='ListVal'>{{machineList.makeLocal}}</text>
+        <span class="ListTitle">制造厂家</span>
+        <text class='ListVal'>{{machine.makelocal}}</text>
       </li>
       <li>
         <span class="ListTitle">出厂日期</span>
-        <text class='ListVal'>{{machineList.makeDay}}</text>
+        <text class='ListVal'>{{machine.makeday}}</text>
       </li>
       <li>
-        <span class="ListTitle">出厂编号</span>
-        <text class='ListVal'>{{machineList.makeId}}</text>
+        <span class="ListTitle">主机编号</span>
+        <text class='ListVal'>{{machine.makeid}}</text>
       </li>
       <li>
-        <span class="ListTitle">启用日期</span>
-        <text class='ListVal'>{{machineList.usedDay}}</text>
-      </li>
-      <li>
-        <span class="ListTitle">资产状态</span>
-        <text class='ListVal'>{{machineList.status}}</text>
-      </li>
-      <li>
-        <span class="ListTitle">设备分类</span>
-        <text class='ListVal'>{{machineList.type}}</text>
+        <span class="ListTitle">维修周期</span>
+        <text class='ListVal'>{{machine.fixcycle}}</text>
       </li>
       <li>
         <span class="ListTitle">折旧年限</span>
-        <text class='ListVal'>{{machineList.endYear}}</text>
-      </li>
-      <li>
-        <span class="ListTitle">大修周期</span>
-        <text class='ListVal'>{{machineList.fixCycle}}</text>
-      </li>
-      <li>
-        <span class="ListTitle">生产线</span>
-        <text class='ListVal'>{{machinroduceLine}}</text>
-      </li>
-      <li>
-        <span class="ListTitle">备注</span>
-        <text class='ListVal'>{{machineList.other}}</text>
+        <text class='ListVal'>{{machine.endyear}}</text>
       </li>
     </ul>
     </view>

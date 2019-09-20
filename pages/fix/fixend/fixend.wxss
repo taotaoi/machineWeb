@@ -1,0 +1,121 @@
+/* pages/fix/fixend/fixend.wxss */
+page {
+  height: 100%;
+  font-size: 14px;
+}
+/* 头部tab 开始 */
+.navTab {
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+}
+
+.navTab ul {
+  display: flex;
+  flex-direction: row;
+}
+
+.navTab ul li {
+  flex: 1;
+  color: #ccc;
+  height: 30px;
+  width: 60px;
+  text-align: center;
+  line-height: 30px;
+}
+
+.navTab .current {
+  color: #42b8fe;
+  border-bottom: 2px solid #42b8fe;
+}
+
+/* 头部tab 结束 */
+.page-submit {
+  height: 100%;
+  padding: 5px;
+ 
+  font-size: 14px;
+  background-color: #efeff4;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+.box {
+
+  width: 100%;
+  background-color: #fff;
+}
+
+.row {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+}
+.tag {
+  font-size: 12px;
+  color: rgba(0,0,0,.54);
+}
+input {
+  height: 30px;
+  border-bottom: 1px solid rgba(0,0,0,.18);
+}
+input:active {
+  border-bottom: 2px solid #3ba7ff;
+}
+
+.btn {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  font-size: 13px;
+  margin: 10px 0;
+  
+  border-radius: 3px;
+  background-color: #3ba7ff;
+  color: #fff;
+  
+}
+textarea {
+  margin-top: 3px;
+  border: 1px solid #ccc;
+}
+
+/* 设备档案 开始 */
+.content {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+   padding: 10px;
+}
+
+.content ul {
+  color: #ccc;
+}
+
+.content li {
+  display: flex;
+  flex-direction: row;
+  height: 30px;
+  line-height: 30px;
+  color: #000;
+}
+
+.content .machineTile {
+  height: 40px;
+  /* border-bottom: 1px solid #ccc; */
+  font-weight: bold;
+}
+
+.content li .ListTitle {
+  flex: 1;
+  color: #8f8f8f;
+}
+
+.content li .ListVal {
+  flex: 3;
+  padding-left: 28px;
+  color: #000;
+}
+/* 设备档案 结束 */

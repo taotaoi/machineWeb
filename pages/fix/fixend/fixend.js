@@ -1,6 +1,4 @@
-// pages/machine/show/show.js
-var axMa = require('../../ax/machine/machine.js');
-var tool = require('../../tools/tool.js');
+// pages/fix/fixend/fixend.js
 Page({
 
   /**
@@ -12,34 +10,15 @@ Page({
       tab2: false,
       tab3: false
     },
-    id:'',
-    machine:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (par) {
-    console.log(par.id);
-    this.setData({
-      id:par.id
-    })
-    this.init(this.data.id);
+  onLoad: function (options) {
+
   },
-  init(id){
-    var that = this;
-    wx.showLoading({
-      title: 'waiting',
-    })
-    axMa.getById(id).then(function(data){
-      wx.hideLoading();
-      console.log(data);
-      if(tool.chkRes(data)) return;
-      that.setData({
-        machine:data.data.data[0]
-      })
-    });
-  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -86,21 +65,21 @@ Page({
     this.setData({
       'showTab.tab1': true,
       'showTab.tab2': false,
-      'showTab.tab3': false
+      'showTab.tab3': false,
     })
   },
   tab2Btn() {
     this.setData({
       'showTab.tab2': true,
       'showTab.tab1': false,
-      'showTab.tab3': false
+      'showTab.tab3': false,
     })
   },
   tab3Btn() {
     this.setData({
-      'showTab.tab3': true,
       'showTab.tab2': false,
-      'showTab.tab1': false
+      'showTab.tab1': false,
+      'showTab.tab3': true,
     })
   },
 })

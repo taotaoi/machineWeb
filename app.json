@@ -1,10 +1,16 @@
 {
   "pages": [
+      "pages/main/main",
+    "pages/fix/submit/submit",
+    "pages/fix/fixend/fixend",
+    "pages/fix/fixing/fixing",
+    
+        "pages/machine/list/list",
         "pages/machine/show/show",
-    "pages/main/main",
+ 
     "pages/index/index",
     "pages/user/show/show",
-    "pages/machine/list/list",
+
 
     "pages/components/navbar/navbar",
     "pages/logs/logs"

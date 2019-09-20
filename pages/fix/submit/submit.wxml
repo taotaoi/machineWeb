@@ -1,0 +1,74 @@
+<!--pages/fix/submit/submit.wxml-->
+<navbar page-name="你当前页面的名字"></navbar>
+
+
+  <view class='navTab'>
+    <ul>
+      <li class="{{showTab.tab1?'current':''}}" bindtap="tab1Btn" >
+        报修
+      </li>
+      <li class="{{showTab.tab2?'current':''}}" bindtap="tab2Btn" >
+        设备信息
+      </li>
+    </ul>
+  </view>
+  <!-- 顶部导航tab 结束 -->
+<!-- 报修 开始 -->
+<view class='page-submit' hidden="{{!showTab.tab1}}">
+  <form bindsubmit='btn'>
+    <view class='box'>
+      <view class='row'>
+        <view class='tag'>设备编号</view>
+        <input class='val' name='machineid' value=''></input>
+      </view>
+      <view class='row'>
+        <view class='tag'>故障类别</view>
+        <input class='val' name='type' value='{{brand.data[brand.index]}}'></input>
+      </view>
+
+      <view class='row'>
+        <view class='tag'>故障描述</view>
+        <textarea style="height:100px;"></textarea>
+      </view>
+<button class='btn' form-type="submit">提交报修</button>
+    </view>
+    
+  </form>
+</view>
+<!-- 报修 结束 -->
+
+<!-- 设备档案 开始 -->
+    <view class="content" hidden="{{!showTab.tab2}}">
+    <ul>
+      <li class="machineTile">{{machine.machineid+"  "+machine.name}}</li>
+      <li>
+        <span class="ListTitle">设备类型</span>
+        <text class='ListVal'>{{machine.type}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">规格型号</span>
+        <text class='ListVal'>{{machine.model}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">购置日期</span>
+        <text class='ListVal'>{{machine.payday}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">启用日期</span>
+        <text class='ListVal'>{{machine.usedday}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">设备状态</span>
+        <text class='ListVal'>{{machine.status}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">备注信息</span>
+        <text class='ListVal'>{{machine.describe}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">设备图片</span>
+        <text class='ListVal'>{{machine.image}}</text>
+      </li>
+    </ul>
+    </view>
+<!-- 设备档案 结束 -->
