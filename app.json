@@ -1,34 +1,41 @@
 {
   "pages": [
+        "pages/machine/show/show",
     "pages/main/main",
     "pages/index/index",
     "pages/user/show/show",
+    "pages/machine/list/list",
+
+    "pages/components/navbar/navbar",
     "pages/logs/logs"
   ],
   "window": {
+    "backgroundColor": "#41b8fe",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#41b8fe",
+    "navigationBarTitleText": "Computer QuickStart",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "navigationStyle": "custom"
   },
-    "tabBar": {
-      "color": "#8f8f8f",
-      "selectedColor": "#41b8fe",
-      "backgroundColor": "#fff",
-      "list": [
-        {
-          "pagePath": "pages/index/index",
-          "text": "主页"
-        },
-        {
-          "pagePath": "pages/main/main",
-          "text": "功能"
-        },
-        {
-          "pagePath": "pages/user/show/show",
-          "text": "用户中心"
-        }
-      ]
-    },
+  "tabBar": {
+    "color": "#8f8f8f",
+    "selectedColor": "#41b8fe",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页"
+      },
+      {
+        "pagePath": "pages/main/main",
+        "text": "功能"
+      },
+      {
+        "pagePath": "pages/user/show/show",
+        "text": "用户中心"
+      }
+    ]
+  },
   "sitemapLocation": "sitemap.json"
 }

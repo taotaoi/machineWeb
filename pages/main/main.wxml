@@ -47,7 +47,7 @@
     <view class='top'>设备信息</view>
     <view class='box'>
       <ul>
-        <li bindtap="router" id="tapTest" data-data="partmentListPrint" style="{{w>=360?'width:90px':''}}">
+        <li bindtap="router" id="tapTest" data-data="listMA" style="{{w>=360?'width:90px':''}}">
           <image src='../images/menu4.png'></image>
           <view class='tag'>设备列表</view>
         </li>

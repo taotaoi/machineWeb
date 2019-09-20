@@ -1,0 +1,28 @@
+<!--pages/machine/list/list.wxml-->
+<navbar page-name="你当前页面的名字"></navbar>
+<view class='fa'>
+  <view class='box' wx:for="{{machineList}}" wx:key="item.machineid" bindtap='linkToPc' data-data='{{item.id}}'>
+    <view class='part1'>
+      <view class='tag1'>{{item.department}}</view>
+      <view class='tag2'>{{item.installaddr}}</view>
+    </view>
+    <view class='part2'>
+      <view class='tag3'>{{item.machineid}}</view>
+      <view class='tag6'>{{item.status}}</view>
+    </view>
+    <view class='part3'>
+      <view class='tag7'>{{item.cpu}}</view>
+      <view class='tag8'>{{item.memory}}</view>
+      <view class='tag9'>{{item.harddisk}}</view>
+      <view class='tag10'>{{item.gpu}}</view>
+      <view class='tag11'>{{item.display}}</view>
+    </view>
+    <view class='part4'>
+      <view class='tag4'>{{item.type}}</view>
+      <view class='tag5'>{{item.purchaseday}}</view>
+      <view class='tag13'>{{item.describe}}</view>
+    </view>
+
+  </view>
+
+</view>

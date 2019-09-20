@@ -1,0 +1,199 @@
+<!--pages/machine/show/show.wxml-->
+<view class="fa">
+<navbar page-name="你当前页面的名字"></navbar>
+  <!-- 顶部导航tab 开始 -->
+  <view class='navTab'>
+    <ul>
+      <li class="{{showTab.tab1?'current':''}}" bindtap="tab1Btn" >
+        基本信息
+      </li>
+      <li class="{{showTab.tab2?'current':''}}" bindtap="tab2Btn" >
+        使用信息
+      </li>
+      <li class="{{showTab.tab3?'current':''}}" bindtap="tab3Btn">
+        出厂信息
+      </li>
+    </ul>
+  </view>
+  <!-- 顶部导航tab 结束 -->
+
+<!-- Tab1显示区域 开始 -->
+    <view class="content" wx:if="{{showTab.tab1}}">
+    <ul>
+      <li class="machineTile">{{machineList.name}}</li>
+      <li>
+        <span class="ListTitle">物资编号</span>
+        <text class='ListVal'>{{machineList.id}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">设备型号</span>
+        <text class='ListVal'>{{machineList.model}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">生产车间</span>
+        <text class='ListVal'>{{machineList.room}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">制造单位</span>
+        <text class='ListVal'>{{machineList.makeLocal}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">出厂日期</span>
+        <text class='ListVal'>{{machineList.makeDay}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">出厂编号</span>
+        <text class='ListVal'>{{machineList.makeId}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">启用日期</span>
+        <text class='ListVal'>{{machineList.usedDay}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">资产状态</span>
+        <text class='ListVal'>{{machineList.status}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">设备分类</span>
+        <text class='ListVal'>{{machineList.type}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">折旧年限</span>
+        <text class='ListVal'>{{machineList.endYear}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">大修周期</span>
+        <text class='ListVal'>{{machineList.fixCycle}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">生产线</span>
+        <text class='ListVal'>{{machinroduceLine}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">备注</span>
+        <text class='ListVal'>{{machineList.other}}</text>
+      </li>
+    </ul>
+    </view>
+    <!-- tab1显示区域 结束 -->
+
+    <!-- Tab2显示区域 开始 -->
+    <view class="content" wx:if="{{showTab.tab2}}">
+    <ul>
+      <li class="machineTile">{{machineList.name}}</li>
+      <li>
+        <span class="ListTitle">物资编号2</span>
+        <text class='ListVal'>{{machineList.id}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">设备型号</span>
+        <text class='ListVal'>{{machineList.model}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">生产车间</span>
+        <text class='ListVal'>{{machineList.room}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">制造单位</span>
+        <text class='ListVal'>{{machineList.makeLocal}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">出厂日期</span>
+        <text class='ListVal'>{{machineList.makeDay}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">出厂编号</span>
+        <text class='ListVal'>{{machineList.makeId}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">启用日期</span>
+        <text class='ListVal'>{{machineList.usedDay}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">资产状态</span>
+        <text class='ListVal'>{{machineList.status}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">设备分类</span>
+        <text class='ListVal'>{{machineList.type}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">折旧年限</span>
+        <text class='ListVal'>{{machineList.endYear}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">大修周期</span>
+        <text class='ListVal'>{{machineList.fixCycle}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">生产线</span>
+        <text class='ListVal'>{{machinroduceLine}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">备注</span>
+        <text class='ListVal'>{{machineList.other}}</text>
+      </li>
+    </ul>
+    </view>
+    <!-- tab2显示区域 结束 -->
+
+    <!-- Tab3显示区域 开始 -->
+    <view class="content" wx:if="{{showTab.tab3}}">
+    <ul>
+      <li class="machineTile">{{machineList.name}}</li>
+      <li>
+        <span class="ListTitle">物资编号3</span>
+        <text class='ListVal'>{{machineList.id}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">设备型号</span>
+        <text class='ListVal'>{{machineList.model}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">生产车间</span>
+        <text class='ListVal'>{{machineList.room}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">制造单位</span>
+        <text class='ListVal'>{{machineList.makeLocal}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">出厂日期</span>
+        <text class='ListVal'>{{machineList.makeDay}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">出厂编号</span>
+        <text class='ListVal'>{{machineList.makeId}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">启用日期</span>
+        <text class='ListVal'>{{machineList.usedDay}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">资产状态</span>
+        <text class='ListVal'>{{machineList.status}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">设备分类</span>
+        <text class='ListVal'>{{machineList.type}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">折旧年限</span>
+        <text class='ListVal'>{{machineList.endYear}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">大修周期</span>
+        <text class='ListVal'>{{machineList.fixCycle}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">生产线</span>
+        <text class='ListVal'>{{machinroduceLine}}</text>
+      </li>
+      <li>
+        <span class="ListTitle">备注</span>
+        <text class='ListVal'>{{machineList.other}}</text>
+      </li>
+    </ul>
+    </view>
+    <!-- tab3显示区域 结束 -->
+</view>

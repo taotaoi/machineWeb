@@ -1,0 +1,66 @@
+/* pages/machine/show/show.wxss */
+.fa {
+  font-size: 14px;
+  background-color: #f3f3f3;
+  display: flex;
+  flex-direction: column;
+ 
+}
+.navTab {
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+}
+
+.navTab ul {
+  display: flex;
+  flex-direction: row;
+}
+
+.navTab ul li {
+  flex: 1;
+  color: #ccc;
+  height: 30px;
+  width: 60px;
+  text-align: center;
+  line-height: 30px;
+}
+
+.navTab .current {
+  color: #42b8fe;
+  border-bottom: 2px solid #42b8fe;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+   padding: 10px;
+}
+
+.content ul {
+  color: #ccc;
+}
+
+.content li {
+  display: flex;
+  flex-direction: row;
+  height: 30px;
+  line-height: 30px;
+  color: #000;
+}
+
+.content li .machineTile {
+  height: 40px;
+  border-bottom: 1px solid #ccc;
+}
+
+.content li .ListTitle {
+  flex: 1;
+  color: #8f8f8f;
+}
+
+.content li .ListVal {
+  flex: 3;
+  padding-left: 28px;
+  color: #000;
+}

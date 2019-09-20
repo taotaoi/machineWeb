@@ -1,0 +1,56 @@
+/* pages/machine/list/list.wxss */
+.fa{
+  width: 100%;
+  height: 100%;
+  font-size: 13px;
+  font-family: '微软雅黑';
+  background-color: #eee;
+}
+.box {
+  
+  width: 100%;
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+.part1{
+background-color: darkorange;
+}
+.part1,.part2,.part3 {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #ccc;
+}
+/* 第一列属性 */
+.tag1 ,.tag2{
+  height: 25px;
+  line-height: 25px;
+  padding-right: 10px;
+}
+
+
+/* 第二列属性 */
+.tag3,.tag6{
+  height: 25px;
+  width: 70px;
+  line-height: 25px;
+}
+.tag3{
+  flex-grow: 2
+}
+.tag6 {
+  flex-grow: 1;
+}
+/* 第三列属性 */
+.tag7,.tag8,.tag9,.tag10,.tag11,.tag12{
+  height: 25px;
+  width: 70px;
+  line-height: 25px;
+  padding-right: 10px;
+}
+/* 第四列属性 */
+.tag13,.tag4,.tag5,{
+  height: 25px;
+  width: 70px;
+  line-height: 25px;
+}

@@ -1,0 +1,74 @@
+/* pages/components/navbar/navbar.wxss */
+.fa {
+  width: 100%;
+  position: relative;
+}
+.navbar {
+  width: 100%;
+   background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.navbar-title {
+  width: 100%;
+  height: 46px;
+  line-height: 46px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  background-color: #fff;
+  color: #333;
+  font-size: 30rpx;
+}
+
+.navbar-action-wrap {
+  width: 80px;
+  height: 45%;
+  border: 1px solid #e8e8e8;
+  border-radius: 20px;
+  position: absolute;
+  left: 10px;
+  bottom: 7px;
+  z-index: 100;
+  line-height: 1;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+
+  overflow: hidden;
+}
+
+.navbar-item1 {
+  border-right: 1px solid #e8e8e8;
+  height: 100%;
+  width: 50%;
+  background-image: url(https://taox.top/computer/images/icon/home/1/zhuye_1.png);
+  background-size: 22px 22px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.navbar-item2 {
+  border-right: 1px solid #e8e8e8;
+  height: 100%;
+  width: 50%;
+  background-image: url(https://taox.top/computer/images/icon/home/1/fanhui.png);
+  background-size: 22px 22px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.navbar-item1:active {
+  background-image: url(https://taox.top/computer/images/icon/home/1/zhuye.png);
+  background-color: skyblue;
+}
+.navbar-item2:active {
+  background-image: url(https://taox.top/computer/images/icon/home/2/fanhui_fff.png);
+  background-color: skyblue;
+}
+

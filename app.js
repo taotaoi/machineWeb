@@ -1,6 +1,19 @@
 //app.js
 App({
+  globa: {},
   onLaunch: function () {
+    var that = this;
+    // 获取头部总高度
+    wx.getSystemInfo({
+      success: res => {
+        //导航高度
+        that.globa.navH = res.statusBarHeight + 46;
+      }, fail(err) {
+        console.log(err);
+      }
+    })
+
+
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())

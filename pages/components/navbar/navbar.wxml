@@ -1,0 +1,14 @@
+<!--pages/components/navbar/navbar.wxml-->
+<view class="fa" style='height:{{navH}}px'>
+<view class="navbar" style='height:{{navH}}px'>
+  <view class="navbar-action-wrap" >
+
+    <view class="navbar-item1" bindtap="toIndex"></view>
+    <view class="navbar-item2" bindtap="navBack" wx:if="{{showNav}}"></view>
+
+  </view>
+  <view class='navbar-title'>
+    {{pageName}}
+  </view>
+</view>
+</view>
