@@ -38,6 +38,7 @@ function msg(title, val) {
   wx.showModal({
     title: title,
     content: val,
+    showCancel: false,
     success: function (res) {
       if (res.confirm) {
         console.log('用户点击确定')
@@ -46,8 +47,8 @@ function msg(title, val) {
   })
 }
 
-// 只有一个按钮
-function msgBtn1(title, val, url) {
+// 只有一个按钮的route
+function msgRout1(title, val, url) {
   wx.showModal({
     title: title,
     content: val,
@@ -55,7 +56,7 @@ function msgBtn1(title, val, url) {
     success: function (res) {
       if (res.confirm) {
         console.log('用户点击确定');
-        wx.navigateTo({
+        wx.reLaunch({
           url: url,
         });
       }
@@ -124,5 +125,5 @@ exports.msg = msg;
 exports.route = route;
 exports.chkRes = chkRes;
 exports.ax = ax;
-exports.msgBtn1 = msgBtn1;
+exports.msgRout1 = msgRout1;
 exports.msgLinkToBar = msgLinkToBar;

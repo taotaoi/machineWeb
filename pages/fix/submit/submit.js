@@ -1,16 +1,18 @@
 // pages/fix/submit/submit.js
 var tool = require('../../tools/tool.js');
 var axMa = require('../../ax/machine/machine.js');
+var axFix = require('../../ax/fix/fix.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    seaVal:'',
     searchBar: false,
     inputTmp:[], // 筛选后的 list
     maList:[],
-    machine: {
+    ma: {
       id: ""
     },
     showTab: {
@@ -141,7 +143,7 @@ Page({
     })
   },
   tab2Btn() {
-    if (!tool.isNull(this.data.machine.machineid)) {
+    if (!tool.isNull(this.data.ma.machineid)) {
       this.setData({
         'showTab.tab2': true,
         'showTab.tab1': false,
@@ -152,5 +154,38 @@ Page({
 
   btn(e) {
     console.log(e.detail.value);
-  }
+    var tmp = e.detail.value;
+    if(tool.isNull(tmp.machineid)){
+      tool.msg("ERR","sid 为空");
+      return;
+    }
+    if (tool.isNull(tmp.fixtype)) {
+      tool.msg("ERR","fixtype 为空");
+      return;
+    }
+    if (tool.isNull(tmp.submitabout)) {
+      tool.msg("ERR","describe 为空");
+      return;
+    }
+    var that = this;
+    axFix.submitAdd(tmp).then(function(data){
+      if(tool.chkRes(data)) return;
+      if(data.data.data){
+        tool.msgRout1("OK",data.data.callback.msg,"../../main/main");
+      }
+      console.log(data);
+    });
+
+  },
+  // 组件返回的machineid
+  comReq(e){
+    var par = e.detail;
+    for(let i=0;i<this.data.maList.length;i++){
+      if(this.data.maList[i].machineid == par){
+        this.setData({
+          ma: this.data.maList[i]
+        });
+      }
+    }
+  },
 })

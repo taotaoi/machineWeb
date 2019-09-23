@@ -18,17 +18,19 @@ page-inputsearch ul {
   flex-direction: column;
   
 }
-page-inputsearch li{
- height: auto;
+.page-inputsearch li{
 
-   padding: 0 5px;
+
+   padding: 15px;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
 }
+li.machineid {
+  width: 50px;
+}
 li.name {
-  display: flex;
-  flex-direction: row;
+  width: 50px;
 }
 .close {
   height: 40px;

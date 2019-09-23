@@ -26,6 +26,7 @@ Component({
     selected(par){
      var id = par.currentTarget.dataset.data;
      console.log(id);
+      this.triggerEvent("comReq", id);
       this.setData({
         show: false
       })
