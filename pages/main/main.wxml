@@ -6,7 +6,7 @@
     <view class='top'>设备报修</view>
     <view class='box'>
       <ul>
-        <li bindtap="router" id="tapTest" data-data="partmentListPC" style="{{w>=360?'width:90px':''}}">
+        <li bindtap="router" id="tapTest" data-data="fixsubmit" style="{{w>=360?'width:90px':''}}">
           <image src='../images/menu4.png'></image>
           <view class='tag'>故障报修</view>
         </li>
@@ -18,12 +18,16 @@
           <image src='../images/menu3.png'></image>
           <view class='tag'>报修列表</view>
         </li>
+        <li bindtap="router" id="tapTest" data-data="insertPC" style="{{w>=360?'width:90px':''}}">
+          <image src='../images/menu3.png'></image>
+          <view class='tag'>scan</view>
+        </li>
       </ul>
     </view>
   </view>
   <!-- 维修 -->
   <view class='manage'>
-    <view class='top'>开始维修</view>
+    <view class='top'>设备维修</view>
     <view class='box'>
       <ul>
         <li bindtap="router" id="tapTest" data-data="partmentListPrint" style="{{w>=360?'width:90px':''}}">
@@ -38,12 +42,17 @@
           <image src='../images/menu3.png'></image>
           <view class='tag'>维修列表</view>
         </li>
+                <li bindtap="router" id="tapTest" data-data="insertPrint" style="{{w>=360?'width:90px':''}}">
+          <image src='../images/menu3.png'></image>
+          <view class='tag'>scan</view>
+        </li>
       </ul>
     </view>
   </view>
 
-    <!-- 设备信息 -->
-    <view class='manage'>
+
+  <!-- 设备信息 开始-->
+  <view class='manage'>
     <view class='top'>设备信息</view>
     <view class='box'>
       <ul>
@@ -51,9 +60,13 @@
           <image src='../images/menu4.png'></image>
           <view class='tag'>设备列表</view>
         </li>
+         <li bindtap="router" id="tapTest" data-data="listMA" style="{{w>=360?'width:90px':''}}">
+          <image src='../images/menu4.png'></image>
+          <view class='tag'>设备保养</view>
+        </li>
       </ul>
     </view>
   </view>
- 
+<!-- 设备信息 结束 -->
 
 </view>

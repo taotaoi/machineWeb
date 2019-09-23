@@ -1,18 +1,19 @@
 {
   "pages": [
-      "pages/main/main",
-    "pages/fix/submit/submit",
+   "pages/fix/submit/submit",
+    "pages/main/main",
+  
+
+   
+    
     "pages/fix/fixend/fixend",
     "pages/fix/fixing/fixing",
-    
-        "pages/machine/list/list",
-        "pages/machine/show/show",
- 
+    "pages/machine/list/list",
+    "pages/machine/show/show",
     "pages/index/index",
     "pages/user/show/show",
-
-
     "pages/components/navbar/navbar",
+    "pages/components/inputsearch/inputsearch",
     "pages/logs/logs"
   ],
   "window": {

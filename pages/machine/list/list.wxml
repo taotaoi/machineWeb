@@ -3,8 +3,8 @@
 <view class='fa'>
   <view class='box' wx:for="{{machineList}}" wx:key="item.machineid" bindtap='linkToMa' data-data='{{item.id}}'>
     <view class='part1'>
-      <view class='tag1'>{{item.department}}</view>
-      <view class='tag2'>{{item.installaddr}}</view>
+      <view class='tag1'>{{item.machineid}}</view>
+      <view class='tag2'>{{item.name}}</view>
     </view>
     <view class='part2'>
       <view class='tag3'>{{item.machineid}}</view>

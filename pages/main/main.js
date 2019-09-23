@@ -74,73 +74,15 @@ Page({
         })
         break;
       }
-      case 'partmentListPC': {
+      case 'fixsubmit': {
         wx.navigateTo({
-          url: '../computer/partmentList2/partmentList2',
+          url: '../fix/submit/submit',
         })
         break;
       }
-      case 'insertPC': {
-        wx.navigateTo({
-          url: '../computer/insert/insert',
-        })
-        break;
-      }
-      // print
-      case 'listPrint': {
-        wx.navigateTo({
-          url: '../print/list/list',
-        })
-        break;
-      }
-      case 'partmentListPrint': {
-        wx.navigateTo({
-          url: '../print/partmentList/partmentList',
-        })
-        break;
-      }
-      case 'insertPrint': {
-        wx.navigateTo({
-          url: '../print/insert/insert',
-        })
-        break;
-      }
-      // 存货
-      case 'inventory': {
-        wx.navigateTo({
-          url: '/pages/inventory/inventory/list/list',
-        })
-        break;
-      }
+     
 
-      case 'insertInv': {
-        wx.navigateTo({
-          url: '/pages/inventory/inventory/insert/insert',
-        })
-        break;
-      }
-      case 'in': {
-        wx.navigateTo({
-          url: '/pages/inventory/in/insert/insert',
-        })
-        break;
-      }
-      case 'out': {
-        wx.navigateTo({
-          url: '/pages/inventory/out/insert/insert',
-        })
-        break;
-      }
-      case 'inoutlist': {
-        // wx.navigateTo({
-        //   url: '/pages/inventory/sheet/inoutList/inoutList',
-        // })
-        break;
-      }
-      case 'resetCount': {
-        this.resetCount();
-        break;
-      }
+     
       default: {
         console.log('route err');
         break;

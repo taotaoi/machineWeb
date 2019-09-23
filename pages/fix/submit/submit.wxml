@@ -1,7 +1,5 @@
 <!--pages/fix/submit/submit.wxml-->
 <navbar page-name="你当前页面的名字"></navbar>
-
-
   <view class='navTab'>
     <ul>
       <li class="{{showTab.tab1?'current':''}}" bindtap="tab1Btn" >
@@ -16,19 +14,23 @@
 <!-- 报修 开始 -->
 <view class='page-submit' hidden="{{!showTab.tab1}}">
   <form bindsubmit='btn'>
+  <input name='id' value='' hidden="true"></input>
     <view class='box'>
-      <view class='row'>
-        <view class='tag'>设备编号</view>
-        <input class='val' name='machineid' value=''></input>
+      <view class='row' style="position: relative;">
+      <inputsea show="{{searchBar}}" list="{{inputTmp}}"></inputsea>
+        <view class='tag'>输入设备编号或名称</view>
+        
+        <input class='val' name='machineid' bindinput="maIdWatch" value='{{machine.machineid}}'></input>
       </view>
+  
       <view class='row'>
         <view class='tag'>故障类别</view>
-        <input class='val' name='type' value='{{brand.data[brand.index]}}'></input>
+        <input class='val' name='fixtype' value=''></input>
       </view>
 
       <view class='row'>
         <view class='tag'>故障描述</view>
-        <textarea style="height:100px;"></textarea>
+        <textarea style="height:100px;" name="submitabout"></textarea>
       </view>
 <button class='btn' form-type="submit">提交报修</button>
     </view>

@@ -30,7 +30,7 @@ page {
 
 /* 头部tab 结束 */
 .page-submit {
-  height: 100%;
+ 
   padding: 5px;
   font-size: 14px;
   background-color: #efeff4;
@@ -62,6 +62,9 @@ input {
 }
 input:active {
   border-bottom: 2px solid #3ba7ff;
+}
+input:focus{
+   border-bottom: 2px solid #3ba7ff;
 }
 
 .btn {
@@ -115,3 +118,4 @@ textarea {
   color: #000;
 }
 /* 设备档案 结束 */
+

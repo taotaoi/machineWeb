@@ -1,0 +1,12 @@
+<!--pages/components/inputsearch/inputsearch.wxml-->
+<view class="page-inputsearch" wx:if="{{show}}">
+<!-- <view class="close" catchtap="closeBar">x</view> -->
+<view class="nomsg"  wx:if="{{!list[0].machineid}}">未找到相关信息</view>
+  <ul wx:for="{{list}}" wx:key="{{item.machineid}}">
+    
+    <li bindtap="selected" data-data="{{item.machineid}}">
+      <view class="machineid">{{item.machineid}}</view>
+      <view class="name">{{item.name}}</view>
+    </li>
+  </ul>
+</view>
