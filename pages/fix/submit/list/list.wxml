@@ -1,0 +1,20 @@
+<!--pages/fix/submit/list/list.wxml-->
+<navbar page-name="报修列表"></navbar>
+<view class="page-list">
+   <view class="box">
+        <ul wx:for="{{list}}" wx:key="{{item.fixid}}">
+          <li>
+            <div class="machineName">{{item.name}}</div>
+            <div class="machineStatus">status</div>
+          </li>
+          <li>
+            <div class="machineId">设备编号：{{item.machineid}}</div>
+          </li>
+          <li class="liEnd">
+            <div class="submitName">提交人：{{item.submituser}}</div>
+            <div class="dateTime"></div>
+          </li>
+        </ul>
+
+      </view>
+      </view>

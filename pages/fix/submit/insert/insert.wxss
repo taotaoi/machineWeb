@@ -2,6 +2,7 @@
 page {
   height: 100%;
   font-size: 14px;
+  background-color: #eee;
 }
 /* 头部tab 开始 */
 .navTab {
@@ -45,6 +46,7 @@ page {
 
   width: 100%;
   background-color: #fff;
+  padding-bottom: 10px;
 }
 
 .row {
@@ -81,6 +83,7 @@ textarea {
   margin-top: 3px;
   border: 1px solid #ccc;
 }
+
 /* 设备档案 开始 */
 .content {
   display: flex;

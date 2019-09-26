@@ -1,13 +1,11 @@
 {
   "pages": [
-   "pages/fix/submit/submit",
+    "pages/fix/submit/show/show",
+    "pages/fix/submit/list/list",
+   "pages/fix/submit/insert/insert",
+   
     "pages/main/main",
   
-
-   
-    
-    "pages/fix/fixend/fixend",
-    "pages/fix/fixing/fixing",
     "pages/machine/list/list",
     "pages/machine/show/show",
     "pages/index/index",

@@ -68,19 +68,26 @@ Page({
     var id = par.currentTarget.dataset.data;
     console.log('main Router:' + id);
     switch (id) {
+      // 1、machine
       case 'listMA': {
         wx.navigateTo({
           url: '../machine/list/list',
         })
         break;
       }
-      case 'fixsubmit': {
+      // 2、submit
+      case 'submitAdd': {
         wx.navigateTo({
-          url: '../fix/submit/submit',
+          url: '../fix/submit/insert/insert',
         })
         break;
       }
-     
+      case 'submitList':{
+        wx.navigateTo({
+          url: '../fix/submit/list/list',
+        })
+        break;
+      }
 
      
       default: {

@@ -24,7 +24,7 @@
       </view>
       <view class='row'>
         <view class='tag'>设备名称</view>
-        <input class='val' value='{{ma.name}}'></input>
+        <input class='val' value='{{ma.name}}' disabled="true"></input>
       </view>
       <view class='row'>
         <view class='tag'>故障类别</view>

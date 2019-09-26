@@ -1,7 +1,7 @@
 // pages/fix/submit/submit.js
-var tool = require('../../tools/tool.js');
-var axMa = require('../../ax/machine/machine.js');
-var axFix = require('../../ax/fix/fix.js');
+var tool = require('../../../tools/tool.js');
+var axMa = require('../../../ax/machine/machine.js');
+var axFix = require('../../../ax/fix/submit.js');
 Page({
 
   /**
@@ -39,9 +39,7 @@ Page({
       // 1、查询所有list
       var that = this;
       var tmp = [];
-      this.setData({
-        maList:[]
-      });
+   
       if(this.data.maList.length>0){
         for (let i = 0; i < this.data.maList.length; i++) {
           let flagName = (this.data.maList[i].name).indexOf(seaVal);
@@ -59,6 +57,9 @@ Page({
         })
       }
       else {
+        this.setData({
+          maList: []
+        });
         axMa.getAllList().then(function (data) {
           if (tool.chkRes(data)) return;
           that.setData({
@@ -94,47 +95,7 @@ Page({
     return;
     
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
 
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
-
-  },
 
   tab1Btn() {
     this.setData({

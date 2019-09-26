@@ -1,0 +1,77 @@
+<!--pages/fix/submit/show/show.wxml-->
+<navbar page-name="报修信息"></navbar>
+<!-- 顶部导航tab 开始 -->
+<view class='navTab'>
+  <ul>
+    <li class="{{showTab.tab1?'current':''}}" bindtap="tab1Btn">
+      报修
+    </li>
+    <li class="{{showTab.tab2?'current':''}}" bindtap="tab2Btn">
+      设备信息
+    </li>
+  </ul>
+</view>
+<!-- 顶部导航tab 结束 -->
+<view class="page-subshow">
+<!-- tab1页面内容 开始 -->
+<view class="tab1show">
+  <!-- 1、故障报修box -->
+  <view class='Box'>
+    <view class='yuan'></view>
+    <ul class="content">
+      <view class='jiantou'></view>
+      <li class="boxTitle">故障报修</li>
+      <!-- 提交人信息 -->
+      <li class="submitUser">
+        <view class="title">提交人:<view class="val">{{myProcess.submitUSER.name}}</view></view>
+        <view class="Time">{{myProcess.fixOBJ.submitdatetime}}</view>
+      </li>
+      <!-- 故障描述 -->
+      <li class='breakDownAbout'>
+        <view class='title'>故障描述:</view>
+        <view class='val'>{{myProcess.fixOBJ.submitabout}}</view>
+      </li>
+            <!-- 故障类型 -->
+      <li class="breakDownType">
+        <view class='title'>故障类型:</view>
+        <view class='val'>{{myProcess.fixOBJ.submittype}}</view>
+      </li>
+      <image src='{{myProcess.fixOBJ.submitimage}}' style='height:100px;width:96px;'></image>
+    </ul>
+  </view>
+<!-- 故障报修box 结束 -->
+
+  <!-- 1、故障报修box -->
+  <view class='Box'>
+    <view class='yuan'></view>
+    <ul class="content">
+      <view class='jiantou'></view>
+      <li class="boxTitle">故障报修</li>
+      <!-- 提交人信息 -->
+      <li class="submitUser">
+        <view class="title">提交人:<view class="val">{{myProcess.submitUSER.name}}</view></view>
+        <view class="Time">{{myProcess.fixOBJ.submitdatetime}}</view>
+      </li>
+      <!-- 故障描述 -->
+      <li class='breakDownAbout'>
+        <view class='title'>故障描述:</view>
+        <view class='val'>{{myProcess.fixOBJ.submitabout}}</view>
+      </li>
+            <!-- 故障类型 -->
+      <li class="breakDownType">
+        <view class='title'>故障类型:</view>
+        <view class='val'>{{myProcess.fixOBJ.submittype}}</view>
+      </li>
+      <image src='{{myProcess.fixOBJ.submitimage}}' style='height:100px;width:96px;'></image>
+    </ul>
+  </view>
+<!-- 故障报修box 结束 -->
+</view>
+<!-- tab1页面内容 结束 -->
+
+<!-- tab2页面内容 开始 -->
+<view class="tab2show">
+
+</view>
+<!-- tab2页面内容 结束 -->
+</view>
