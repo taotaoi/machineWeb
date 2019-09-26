@@ -45,5 +45,30 @@ function getAlllist(){
   return p;
 }
 
+function getByFixId(data){
+  var p = new Promise(function (req, rej) {
+    wx.request({
+      url: 'https://taox.top/ma/act/submit.php',
+      method: 'POST',
+      data: {
+        main: 'getbyfixid',
+        data: JSON.stringify(data)
+      },
+      header: {
+        // 'content-type': 'application/json' // 默认值
+        'Content-Type': "application/x-www-form-urlencoded"
+      },
+      success(res) {
+        req(res);
+      },
+      fail(err) {
+        rej(err);
+      }
+    });
+  });
+  return p;
+}
+
 exports.submitAdd = submitAdd;
 exports.getAlllist = getAlllist;
+exports.getByFixId = getByFixId;
