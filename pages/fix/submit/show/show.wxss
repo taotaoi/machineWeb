@@ -4,9 +4,8 @@ page {
   font-size: 14px;
 }
 .page-subshow{
-  padding: 0px 20px 10px;
+  /* padding: 0px 20px 10px; js style控制*/
   box-sizing: border-box;
-   
 }
 
 /* 头部tab 开始 */
@@ -113,3 +112,41 @@ page {
   padding-left: 5px;
 }
 /* 故障报修box 结束 */
+
+/* 设备档案 开始 */
+.tab2show {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 10px;
+}
+
+.tab2show ul {
+  color: #ccc;
+}
+
+.tab2show li {
+  display: flex;
+  flex-direction: row;
+  height: 30px;
+  line-height: 30px;
+  color: #000;
+}
+
+.tab2show .machineTile {
+  height: 40px;
+  /* border-bottom: 1px solid #ccc; */
+  font-weight: bold;
+}
+
+.tab2show li .ListTitle {
+  flex: 1;
+  color: #8f8f8f;
+}
+
+.tab2show li .ListVal {
+  flex: 3;
+  padding-left: 28px;
+  color: #000;
+}
+/* 设备档案 结束 */

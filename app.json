@@ -1,7 +1,8 @@
 {
   "pages": [
+      "pages/fix/submit/list/list",
     "pages/fix/submit/show/show",
-    "pages/fix/submit/list/list",
+ 
    "pages/fix/submit/insert/insert",
    
     "pages/main/main",

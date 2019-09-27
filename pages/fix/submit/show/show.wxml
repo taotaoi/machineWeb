@@ -12,66 +12,75 @@
   </ul>
 </view>
 <!-- 顶部导航tab 结束 -->
-<view class="page-subshow">
-<!-- tab1页面内容 开始 -->
-<view class="tab1show">
-  <!-- 1、故障报修box -->
-  <view class='Box'>
-    <view class='yuan'></view>
-    <ul class="content">
-      <view class='jiantou'></view>
-      <li class="boxTitle">故障报修</li>
-      <!-- 提交人信息 -->
-      <li class="submitUser">
-        <view class="title">提交人:<view class="val">{{myProcess.submitUSER.name}}</view></view>
-        <view class="Time">{{myProcess.fixOBJ.submitdatetime}}</view>
-      </li>
-      <!-- 故障描述 -->
-      <li class='breakDownAbout'>
-        <view class='title'>故障描述:</view>
-        <view class='val'>{{myProcess.fixOBJ.submitabout}}</view>
-      </li>
-            <!-- 故障类型 -->
-      <li class="breakDownType">
-        <view class='title'>故障类型:</view>
-        <view class='val'>{{myProcess.fixOBJ.submittype}}</view>
-      </li>
-      <image src='{{myProcess.fixOBJ.submitimage}}' style='height:100px;width:96px;'></image>
-    </ul>
+<view class="page-subshow" style="{{showTab.tab2?'padding:0;':'padding: 0px 20px 10px;'}}">
+
+  <!-- tab1页面内容 开始 -->
+  <view class="tab1show" hidden="{{!showTab.tab1}}">
+    <!-- 1、故障报修box -->
+    <view class='Box'>
+      <view class='yuan'></view>
+      <ul class="content">
+        <view class='jiantou'></view>
+        <li class="boxTitle">故障报修</li>
+        <!-- 提交人信息 -->
+        <li class="submitUser">
+          <view class="title">提交人:
+            <view class="val">{{submit.name}}</view>
+          </view>
+          <view class="Time">{{submit.submitdatetime}}</view>
+        </li>
+        <!-- 故障描述 -->
+        <li class='breakDownAbout'>
+          <view class='title'>故障描述:</view>
+          <view class='val'>{{submit.submitabout}}</view>
+        </li>
+        <!-- 故障类型 -->
+        <li class="breakDownType">
+          <view class='title'>故障类型:</view>
+          <view class='val'>{{submit.fixtype}}</view>
+        </li>
+        <image src='{{myProcess.fixOBJ.submitimage}}' style='height:100px;width:96px;'></image>
+      </ul>
+    </view>
+    <!-- 故障报修box 结束 -->
+
+
   </view>
-<!-- 故障报修box 结束 -->
+  <!-- tab1页面内容 结束 -->
 
-  <!-- 1、故障报修box -->
-  <view class='Box'>
-    <view class='yuan'></view>
-    <ul class="content">
-      <view class='jiantou'></view>
-      <li class="boxTitle">故障报修</li>
-      <!-- 提交人信息 -->
-      <li class="submitUser">
-        <view class="title">提交人:<view class="val">{{myProcess.submitUSER.name}}</view></view>
-        <view class="Time">{{myProcess.fixOBJ.submitdatetime}}</view>
-      </li>
-      <!-- 故障描述 -->
-      <li class='breakDownAbout'>
-        <view class='title'>故障描述:</view>
-        <view class='val'>{{myProcess.fixOBJ.submitabout}}</view>
-      </li>
-            <!-- 故障类型 -->
-      <li class="breakDownType">
-        <view class='title'>故障类型:</view>
-        <view class='val'>{{myProcess.fixOBJ.submittype}}</view>
-      </li>
-      <image src='{{myProcess.fixOBJ.submitimage}}' style='height:100px;width:96px;'></image>
-    </ul>
+  <!-- tab2页面内容 开始 -->
+  <view class="tab2show" hidden="{{!showTab.tab2}}">
+     <ul>
+    <li class="machineTile">{{ma.machineid+" "+ma.name}}</li>
+    <li>
+      <span class="ListTitle">设备类型</span>
+      <text class='ListVal'>{{ma.type}}</text>
+    </li>
+    <li>
+      <span class="ListTitle">规格型号</span>
+      <text class='ListVal'>{{ma.model}}</text>
+    </li>
+    <li>
+      <span class="ListTitle">购置日期</span>
+      <text class='ListVal'>{{ma.payday}}</text>
+    </li>
+    <li>
+      <span class="ListTitle">启用日期</span>
+      <text class='ListVal'>{{ma.usedday}}</text>
+    </li>
+    <li>
+      <span class="ListTitle">设备状态</span>
+      <text class='ListVal'>{{ma.status}}</text>
+    </li>
+    <li>
+      <span class="ListTitle">备注信息</span>
+      <text class='ListVal'>{{ma.describe}}</text>
+    </li>
+    <li>
+      <span class="ListTitle">设备图片</span>
+      <text class='ListVal'>{{ma.image}}</text>
+    </li>
+  </ul>
   </view>
-<!-- 故障报修box 结束 -->
-</view>
-<!-- tab1页面内容 结束 -->
-
-<!-- tab2页面内容 开始 -->
-<view class="tab2show">
-
-</view>
-<!-- tab2页面内容 结束 -->
+  <!-- tab2页面内容 结束 -->
 </view>

@@ -37,5 +37,10 @@ Component({
         })
       });
     },
+    linkToShow(par){
+      var fixid = par.currentTarget.dataset.data;
+      // console.log(fixid);
+      tool.route("../show/show?id="+fixid);
+    },
   }
 })

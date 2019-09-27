@@ -1,6 +1,8 @@
 // pages/fix/submit/show/show.js
 var tool = require('../../../tools/tool.js');
 var axSu = require('../../../ax/fix/submit.js');
+var axMa = require('../../../ax/machine/machine.js');
+var axCom = require('../../../ax/fix/comm.js'); // 查询状态
 Component({
   /**
    * 组件的属性列表
@@ -14,6 +16,7 @@ Component({
    */
   data: {
     fixid:'',
+    submit:{},
     showTab: {
       tab1: true,
       tab2: false
@@ -34,7 +37,8 @@ Component({
       this.setData({
         fixid:par.id
       });
-      // this.init(this.data.fixid);
+      // console.log(par.id);
+      this.init(this.data.fixid);
     },
     init(fixid){
       var that = this;
@@ -44,9 +48,20 @@ Component({
       });
       axSu.getByFixId(fordata).then(function(data){
         console.log(data);
-        wx.hideLoading();
+        
         if(tool.chkRes(data)) return;
-
+        that.setData({
+          submit:data.data.data[0]
+        });
+        // 设置 tab2 machine资料
+        return axMa.getByMaId(data.data.data[0].machineid);
+      }).then(function(data){
+        console.log(data);
+        if (tool.chkRes(data)) return;
+        wx.hideLoading();
+        that.setData({
+          ma: data.data.data[0]
+        });
       })
     },
     tab1Btn() {

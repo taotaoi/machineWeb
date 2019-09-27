@@ -132,7 +132,7 @@ Page({
     axFix.submitAdd(tmp).then(function(data){
       if(tool.chkRes(data)) return;
       if(data.data.data){
-        tool.msgRout1("OK",data.data.callback.msg,"../../main/main");
+        tool.msgRout1("OK",data.data.callback.msg,"../../../main/main");
       }
       console.log(data);
     });

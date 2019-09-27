@@ -2,7 +2,7 @@
 <navbar page-name="报修列表"></navbar>
 <view class="page-list">
    <view class="box">
-        <ul wx:for="{{list}}" wx:key="{{item.fixid}}">
+        <ul wx:for="{{list}}" wx:key="{{item.fixid}}" bindtap="linkToShow" data-data="{{item.fixid}}">
           <li>
             <div class="machineName">{{item.name}}</div>
             <div class="machineStatus">status</div>

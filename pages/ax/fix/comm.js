@@ -1,11 +1,19 @@
-// 查询所有的list
-function getAllList() {
-  var p = new Promise(function (req, rej) {
+// 根据fixid 查询当前的状态
+function getStatusByFixId(data){
+  var all = [isSubmit(),isFixing(),isFixEnd()];
+  Promise.all(all).then(function(data){
+    console.log(data);
+  })
+}
+
+function isSubmit(data){
+  var p1 = new Promise(function (req, rej) {
     wx.request({
-      url: 'https://taox.top/ma/act/machine.php',
+      url: 'https://taox.top/ma/act/submit.php',
       method: 'POST',
       data: {
-        main: 'getalllist'
+        main: 'getbyfixid',
+        data: JSON.stringify(data)
       },
       header: {
         // 'content-type': 'application/json' // 默认值
@@ -19,41 +27,17 @@ function getAllList() {
       }
     });
   });
-  return p;
+  
+
 }
-// cid
-function getById(id) {
-  var data = {id:id}
-  var p = new Promise(function (req, rej) {
+
+function isFixing(data){
+  var p2 = new Promise(function (req, rej) {
     wx.request({
-      url: 'https://taox.top/ma/act/machine.php',
+      url: 'https://taox.top/ma/act/fixing.php',
       method: 'POST',
       data: {
-        main: 'getbyid',
-        data:JSON.stringify(data)
-      },
-      header: {
-        // 'content-type': 'application/json' // 默认值
-        'Content-Type': "application/x-www-form-urlencoded"
-      },
-      success(res) {
-        req(res);
-      },
-      fail(err) {
-        rej(err);
-      }
-    });
-  });
-  return p;
-}
-function getByMaId(machineid) {
-  var data = { machineid: machineid }
-  var p = new Promise(function (req, rej) {
-    wx.request({
-      url: 'https://taox.top/ma/act/machine.php',
-      method: 'POST',
-      data: {
-        main: 'getbymaid',
+        main: 'getbyfixid',
         data: JSON.stringify(data)
       },
       header: {
@@ -70,6 +54,29 @@ function getByMaId(machineid) {
   });
   return p;
 }
-exports.getAllList = getAllList;
-exports.getById = getById;
-exports.getByMaId = getByMaId;
+
+function isFixEnd(data){
+  var p = new Promise(function (req, rej) {
+    wx.request({
+      url: 'https://taox.top/ma/act/fixend.php',
+      method: 'POST',
+      data: {
+        main: 'getbyfixid',
+        data: JSON.stringify(data)
+      },
+      header: {
+        // 'content-type': 'application/json' // 默认值
+        'Content-Type': "application/x-www-form-urlencoded"
+      },
+      success(res) {
+        req(res);
+      },
+      fail(err) {
+        rej(err);
+      }
+    });
+  });
+  return p;
+}
+
+exports.getStatusByFixId = getStatusByFixId;
