@@ -88,7 +88,20 @@ Page({
         })
         break;
       }
-
+      // 3、fixing
+      case 'fixingList': {
+        wx.navigateTo({
+          url: '../fix/fixing/list/list',
+        })
+        break;
+      }
+      // 4、fixend
+      case 'fixEndList': {
+        wx.navigateTo({
+          url: '../fix/fixend/list/list',
+        })
+        break;
+      }
      
       default: {
         console.log('route err');

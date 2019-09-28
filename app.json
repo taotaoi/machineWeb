@@ -1,12 +1,15 @@
 {
   "pages": [
-      "pages/fix/submit/list/list",
-    "pages/fix/submit/show/show",
- 
-   "pages/fix/submit/insert/insert",
+        "pages/main/main",
+    "pages/fix/fixend/list/list",
+    "pages/fix/fixing/list/list",
    
-    "pages/main/main",
-  
+    "pages/fix/submit/list/list",
+      "pages/demo/main",
+    
+    "pages/fix/submit/show/show",
+    "pages/fix/submit/insert/insert",
+
     "pages/machine/list/list",
     "pages/machine/show/show",
     "pages/index/index",
@@ -14,6 +17,7 @@
     "pages/components/navbar/navbar",
     "pages/components/inputsearch/inputsearch",
     "pages/logs/logs"
+  
   ],
   "window": {
     "backgroundColor": "#41b8fe",

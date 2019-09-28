@@ -1,4 +1,4 @@
-<!--pages/fix/submit/list/list.wxml-->
+<!--pages/fix/fixing/list/list.wxml-->
 <navbar page-name="报修列表"></navbar>
 <view class="page-list">
    <view class="box">

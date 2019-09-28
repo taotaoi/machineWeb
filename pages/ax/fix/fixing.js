@@ -1,12 +1,10 @@
-// 根据fixid 查询当前的状态
-function getStatusByFixId(data){
-  var p1 = new Promise(function (req, rej) {
+function getAllList() {
+  var p = new Promise(function (req, rej) {
     wx.request({
-      url: 'https://taox.top/ma/act/common.php',
+      url: 'https://taox.top/ma/act/fixing.php',
       method: 'POST',
       data: {
-        main: 'getstatusbyfixid',
-        data: JSON.stringify(data)
+        main: 'getalllist'
       },
       header: {
         // 'content-type': 'application/json' // 默认值
@@ -20,10 +18,7 @@ function getStatusByFixId(data){
       }
     });
   });
-  return p1;
-
+  return p;
 }
 
-
-
-exports.getStatusByFixId = getStatusByFixId;
+exports.getAllList = getAllList;
