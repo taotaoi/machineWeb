@@ -73,7 +73,7 @@ Page({
       // 3、fixing
       case 'fixingAdd':{
         wx.navigateTo({
-          url: '../fix/fixing/insert/insert',
+          url: '../fix/fixing/subList/subList',
         })
         break;
       }

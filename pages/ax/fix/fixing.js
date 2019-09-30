@@ -1,3 +1,27 @@
+function insert(data) {
+  var p = new Promise(function (req, rej) {
+    wx.request({
+      url: 'https://taox.top/ma/act/fixing.php',
+      method: 'POST',
+      data: {
+        main: 'insert',
+        data: JSON.stringify(data)
+      },
+      header: {
+        // 'content-type': 'application/json' // 默认值
+        'Content-Type': "application/x-www-form-urlencoded"
+      },
+      success(res) {
+        req(res);
+      },
+      fail(err) {
+        rej(err);
+      }
+    });
+  });
+  return p;
+}
+
 function getAllList() {
   var p = new Promise(function (req, rej) {
     wx.request({
@@ -71,6 +95,7 @@ function getBySubmitUser(data) {
   return p;
 }
 
+exports.insert = insert;
 exports.getAllList = getAllList;
 exports.getByFixUser = getByFixUser;
 exports.getBySubmitUser = getBySubmitUser;

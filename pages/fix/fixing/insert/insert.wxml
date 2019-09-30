@@ -1,2 +1,76 @@
 <!--pages/fix/fixing/insert/insert.wxml-->
-<text>pages/fix/fixing/insert/insert.wxml</text>
+<navbar page-name="你当前页面的名字"></navbar>
+<view class='navTab'>
+  <ul>
+    <li class="{{showTab.tab1?'current':''}}" bindtap="tab1Btn">
+      开始维修
+    </li>
+    <li class="{{showTab.tab2?'current':''}}" bindtap="tab2Btn">
+      维修进度
+    </li>
+    <li class="{{showTab.tab3?'current':''}}" bindtap="tab3Btn">
+      设备信息
+    </li>
+  </ul>
+</view>
+<!-- 顶部导航tab 结束 -->
+<!-- 报修 开始 -->
+<view class='page-submit' hidden="{{!showTab.tab1}}">
+  <form bindsubmit='btn'>
+    <input name='fixuser' value='{{user.id}}' hidden="true"></input>
+     <input name='fixid' value='{{fixid}}' hidden="true"></input>
+    <view class='box'>
+      <view class='row'>
+        <view class='tag'>内部维修/委外维修</view>
+        <!-- 用来链接显示id name -->
+        <input class='val' name="whofix" value=''></input>
+      </view>
+
+      <view class='row'>
+        <view class='tag'>维修人员</view>
+        <!-- 由userid控制回传 -->
+        <input class='val' value='{{user.name}}' disabled="true"></input>
+      </view>
+
+      <button class='btn' form-type="submit">提交维修</button>
+    </view>
+
+  </form>
+</view>
+<!-- 报修 结束 -->
+
+<!-- 设备档案 开始 -->
+<view class="content" hidden="{{!showTab.tab3}}">
+  <ul>
+    <li class="machineTile">{{ma.machineid+" "+ma.name}}</li>
+    <li>
+      <span class="ListTitle">设备类型</span>
+      <text class='ListVal'>{{ma.type}}</text>
+    </li>
+    <li>
+      <span class="ListTitle">规格型号</span>
+      <text class='ListVal'>{{ma.model}}</text>
+    </li>
+    <li>
+      <span class="ListTitle">购置日期</span>
+      <text class='ListVal'>{{ma.payday}}</text>
+    </li>
+    <li>
+      <span class="ListTitle">启用日期</span>
+      <text class='ListVal'>{{ma.usedday}}</text>
+    </li>
+    <li>
+      <span class="ListTitle">设备状态</span>
+      <text class='ListVal'>{{ma.status}}</text>
+    </li>
+    <li>
+      <span class="ListTitle">备注信息</span>
+      <text class='ListVal'>{{ma.describe}}</text>
+    </li>
+    <li>
+      <span class="ListTitle">设备图片</span>
+      <text class='ListVal'>{{ma.image}}</text>
+    </li>
+  </ul>
+</view>
+<!-- 设备档案 结束 -->
