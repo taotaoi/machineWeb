@@ -11,7 +11,7 @@
             <div class="machineId">设备编号：{{item.machineid}}</div>
           </li>
           <li class="liEnd">
-            <div class="submitName">提交人：{{item.submituser}}</div>
+            <div class="submitName">提交人：{{item.submitname}}</div>
             <div class="dateTime">{{item.submitdatetime}}</div>
           </li>
         </ul>

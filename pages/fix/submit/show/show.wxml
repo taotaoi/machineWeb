@@ -25,7 +25,7 @@
         <!-- 提交人信息 -->
         <li class="submitUser">
           <view class="title">提交人:
-            <view class="val">{{submit.name}}</view>
+            <view class="val">{{submit.submitname}}</view>
           </view>
           <view class="Time">{{submit.submitdatetime}}</view>
         </li>

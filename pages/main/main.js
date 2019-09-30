@@ -71,6 +71,18 @@ Page({
         break;
       }
       // 3、fixing
+      case 'fixingAdd':{
+        wx.navigateTo({
+          url: '../fix/fixing/insert/insert',
+        })
+        break;
+      }
+      case 'myFixing': {
+        wx.navigateTo({
+          url: '../fix/fixing/myList/myList',
+        })
+        break;
+      } 
       case 'fixingList': {
         wx.navigateTo({
           url: '../fix/fixing/list/list',
@@ -78,6 +90,18 @@ Page({
         break;
       }
       // 4、fixend
+      case 'fixEndAdd': {
+        wx.navigateTo({
+          url: '../fix/fixend/insert/insert',
+        })
+        break;
+      }
+      case 'myFixEndList': {
+        wx.navigateTo({
+          url: '../fix/fixend/myList/myList',
+        })
+        break;
+      } 
       case 'fixEndList': {
         wx.navigateTo({
           url: '../fix/fixend/list/list',

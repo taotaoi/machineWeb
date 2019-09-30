@@ -2,27 +2,27 @@
   "pages": [
     "pages/fix/submit/myList/myList",
     "pages/user/login/login",
-      "pages/user/reg/reg",
-      "pages/user/show/show",
-  
-        "pages/main/main",
+    "pages/user/reg/reg",
+    "pages/user/show/show",
+    "pages/main/main",
     "pages/fix/fixend/list/list",
+    "pages/fix/fixend/myList/myList",
+    "pages/fix/fixend/insert/insert",
+    "pages/fix/fixend/show/show",
     "pages/fix/fixing/list/list",
-   
+    "pages/fix/fixing/insert/insert",
+    "pages/fix/fixing/show/show",
+    "pages/fix/fixing/myList/myList",
     "pages/fix/submit/list/list",
-      "pages/demo/main",
-    
+    "pages/demo/main",
     "pages/fix/submit/show/show",
     "pages/fix/submit/insert/insert",
-
     "pages/machine/list/list",
     "pages/machine/show/show",
     "pages/index/index",
- 
     "pages/components/navbar/navbar",
     "pages/components/inputsearch/inputsearch",
     "pages/logs/logs"
-  
   ],
   "window": {
     "backgroundColor": "#41b8fe",

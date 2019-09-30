@@ -14,7 +14,7 @@ Component({
    */
   data: {
     list:[],
-    user: getApp().globalData.user
+    user: {}
   },
 
   /**
@@ -35,7 +35,7 @@ Component({
       wx.showLoading({
         title: 'waiting',
       });
-      axSubmit.getByUser(this.data.user.name).then(function(data){
+      axSubmit.getByUserId(this.data.user.id).then(function(data){
         console.log(data);
         wx.hideLoading();
         if(tool.chkRes(data)) return;

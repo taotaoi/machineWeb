@@ -1,6 +1,7 @@
-<!--pages/fix/fixing/list/list.wxml-->
-<navbar page-name="报修列表"></navbar>
+<!--pages/fix/fixing/show/show.wxml-->
+<navbar page-name="我的维修"></navbar>
 <view class="page-list">
+  <view>{{(list.length<1)?'空':''}}</view>
    <view class="box">
         <ul wx:for="{{list}}" wx:key="{{item.fixid}}" bindtap="linkToShow" data-data="{{item.fixid}}">
           <li>
@@ -12,7 +13,7 @@
           </li>
           <li class="liEnd">
             <div class="submitName">提交人：{{item.submitname}}</div>
-            <div class="dateTime"></div>
+            <div class="dateTime">{{item.submitdatetime}}</div>
           </li>
         </ul>
 

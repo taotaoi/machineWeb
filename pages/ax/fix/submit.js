@@ -69,8 +69,8 @@ function getByFixId(data){
   return p;
 }
 
-function getByUser(data) {
-  var formdata = {user:data};
+function getByUserId(data) {
+  var formdata = {userid:data};
   var p = new Promise(function (req, rej) {
     wx.request({
       url: 'https://taox.top/ma/act/submit.php',
@@ -97,4 +97,4 @@ function getByUser(data) {
 exports.submitAdd = submitAdd;
 exports.getAlllist = getAlllist;
 exports.getByFixId = getByFixId;
-exports.getByUser = getByUser;
+exports.getByUserId = getByUserId;

@@ -15,7 +15,7 @@
 <view class='page-submit' hidden="{{!showTab.tab1}}">
   <form bindsubmit='btn'>
     <input name='machineid' value='{{ma.machineid}}' hidden="true"></input>
-    <input name='submituser' value='{{user.name}}' hidden="true"></input>
+    <input name='submituser' value='{{user.id}}' hidden="true"></input>
     <view class='box'>
       <view class='row' style="position: relative;">
         <inputsea show="{{searchBar}}" list="{{inputTmp}}" bind:comReq="comReq"></inputsea>
