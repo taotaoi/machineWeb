@@ -1,57 +1,10 @@
-function submitAdd(data) {
+function reg(data) {
   var p = new Promise(function (req, rej) {
     wx.request({
-      url: 'https://taox.top/ma/act/submit.php',
-      method: 'POST',
+      url: "https://taox.top/ma/act/user.php",
+      method: 'post',
       data: {
-        main: 'insert',
-        data:JSON.stringify(data)
-      },
-      header: {
-        // 'content-type': 'application/json' // 默认值
-        'Content-Type': "application/x-www-form-urlencoded"
-      },
-      success(res) {
-        req(res);
-      },
-      fail(err) {
-        rej(err);
-      }
-    });
-  });
-  return p;
-}
-
-function getAlllist(){
-  var p = new Promise(function (req, rej) {
-    wx.request({
-      url: 'https://taox.top/ma/act/submit.php',
-      method: 'POST',
-      data: {
-        main: 'getalllist'
-      },
-      header: {
-        // 'content-type': 'application/json' // 默认值
-        'Content-Type': "application/x-www-form-urlencoded"
-      },
-      success(res) {
-        req(res);
-      },
-      fail(err) {
-        rej(err);
-      }
-    });
-  });
-  return p;
-}
-
-function getByFixId(data){
-  var p = new Promise(function (req, rej) {
-    wx.request({
-      url: 'https://taox.top/ma/act/submit.php',
-      method: 'POST',
-      data: {
-        main: 'getbyfixid',
+        main: 'reg',
         data: JSON.stringify(data)
       },
       header: {
@@ -69,15 +22,15 @@ function getByFixId(data){
   return p;
 }
 
-function getByUser(data) {
-  var formdata = {user:data};
+// 获取用户信息
+function getUserByOpenId(data){
   var p = new Promise(function (req, rej) {
     wx.request({
-      url: 'https://taox.top/ma/act/submit.php',
-      method: 'POST',
+      url: "https://taox.top/ma/act/user.php",
+      method: 'post',
       data: {
-        main: 'getbyuser',
-        data: JSON.stringify(formdata)
+        main: 'getuserbyopenid',
+        data: JSON.stringify(data)
       },
       header: {
         // 'content-type': 'application/json' // 默认值
@@ -94,7 +47,61 @@ function getByUser(data) {
   return p;
 }
 
-exports.submitAdd = submitAdd;
-exports.getAlllist = getAlllist;
-exports.getByFixId = getByFixId;
-exports.getByUser = getByUser;
+// 对外
+function getOpenId() {
+  var p = new Promise(function (req, rej) {
+    getCode().then(function (data) {
+      var formdata = { code: data.code };
+      return getOpenIdByCode(formdata);
+    }).then(function (data) {
+      req(data);
+    })
+  })
+  return p;
+}
+
+// js文件内部使用
+function getCode() {
+  var p = new Promise(function (req, rej) {
+    wx.login({
+      success(res) {
+        if (res.code) {
+          req(res);
+        } else {
+          rej(res.errMsg);
+          console.log('登录失败！' + res.errMsg)
+        }
+      }
+    })
+  });
+  return p;
+}
+
+// js内部使用
+function getOpenIdByCode(data) {
+  var p = new Promise(function (req, rej) {
+    wx.request({
+      url: "https://taox.top/ma/act/user.php",
+      method: 'post',
+      data: {
+        main: 'getopenid',
+        data: JSON.stringify(data)
+      },
+      header: {
+        // 'content-type': 'application/json' // 默认值
+        'Content-Type': "application/x-www-form-urlencoded"
+      },
+      success(res) {
+        req(res);
+      },
+      fail(err) {
+        rej(err);
+      }
+    });
+  });
+  return p;
+}
+
+exports.reg = reg;
+exports.getOpenId = getOpenId;
+exports.getUserByOpenId = getUserByOpenId;

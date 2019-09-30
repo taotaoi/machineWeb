@@ -1,3 +1,15 @@
+function isLogin(){
+  var user = getApp().globalData.user;
+  if (isNull(user)) {
+    wx.reLaunch({
+      url: '/pages/user/login/login',
+    })
+    return false;
+  }
+  else{
+   return true;
+  }
+}
 
 function isNull(str) {
   try {
@@ -127,3 +139,4 @@ exports.chkRes = chkRes;
 exports.ax = ax;
 exports.msgRout1 = msgRout1;
 exports.msgLinkToBar = msgLinkToBar;
+exports.isLogin = isLogin;

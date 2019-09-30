@@ -1,5 +1,10 @@
 {
   "pages": [
+    "pages/fix/submit/myList/myList",
+    "pages/user/login/login",
+      "pages/user/reg/reg",
+      "pages/user/show/show",
+  
         "pages/main/main",
     "pages/fix/fixend/list/list",
     "pages/fix/fixing/list/list",
@@ -13,7 +18,7 @@
     "pages/machine/list/list",
     "pages/machine/show/show",
     "pages/index/index",
-    "pages/user/show/show",
+ 
     "pages/components/navbar/navbar",
     "pages/components/inputsearch/inputsearch",
     "pages/logs/logs"

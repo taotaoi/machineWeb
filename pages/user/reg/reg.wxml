@@ -1,0 +1,18 @@
+<!--pages/user/reg/reg.wxml-->
+<navbar page-name="你当前页面的名字" show-nav="{{false}}"></navbar>
+<view class='fa'>
+  <form bindsubmit='btn'>
+    <input hidden="true" name="openid" value="{{openid}}"></input>
+    <view class='box'>
+      <view class='row'>
+        <view class='tag'>姓名</view>
+        <input class='val' name='name' value=''></input>
+      </view>
+       <view class='row'>
+        <view class='tag'>部门</view>
+        <input class='val' name='department' value=''></input>
+      </view>
+    </view>
+    <button class='btn ' form-type="submit">注册</button>
+  </form>
+</view>

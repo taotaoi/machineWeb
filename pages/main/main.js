@@ -1,4 +1,5 @@
 // pages/main/main.js
+var tool = require('../tools/tool.js');
 Page({
 
   /**
@@ -8,7 +9,8 @@ Page({
     h: 0,
     w: 0,
     setW: 0,
-    login: false
+    login: false,
+    user:{}
   },
 
   /**
@@ -20,48 +22,22 @@ Page({
       w: wx.getSystemInfoSync().windowWidth
     });
     console.log("w:" + this.data.w + " h:" + this.data.h);
+    this.init();
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+  init(){
+    // 1、检查登陆情况
+    var user = getApp().globalData.user;
+    if(tool.isNull(user)){
+      wx.reLaunch({
+        url: "/pages/user/login/login",
+      });
+    }
+    else {
+      this.setData({
+        user:user
+      })
+    }
   },
 
   router(par) {
@@ -78,7 +54,13 @@ Page({
       // 2、submit
       case 'submitAdd': {
         wx.navigateTo({
-          url: '../fix/submit/insert/insert',
+         url: '../fix/submit/insert/insert',
+        })
+        break;
+      }
+      case 'mySubmitList':{
+        wx.navigateTo({
+          url: '../fix/submit/myList/myList',
         })
         break;
       }

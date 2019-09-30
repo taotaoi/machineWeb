@@ -1,6 +1,7 @@
-<!--pages/fix/submit/list/list.wxml-->
-<navbar page-name="报修列表"></navbar>
+<!--pages/fix/submit/myList/myList.wxml-->
+<navbar page-name="我的报修"></navbar>
 <view class="page-list">
+  <view>{{(list.length<1)?'空':''}}</view>
    <view class="box">
         <ul wx:for="{{list}}" wx:key="{{item.fixid}}" bindtap="linkToShow" data-data="{{item.fixid}}">
           <li>

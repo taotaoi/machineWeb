@@ -1,2 +1,23 @@
 <!--pages/user/show/show.wxml-->
-<text>pages/user/show/show.wxml</text>
+<!--pages/user/show/show.wxml-->
+<navbar page-name="你当前页面的名字" show-nav="{{false}}"></navbar>
+<view class="fa">
+  <ul>
+    <li>
+      <view class="tag">用户编码</view>
+      <view class="val">{{user.id}}</view>
+    </li>
+    <li>
+      <view class="tag">姓名</view>
+      <view class="val">{{user.name}}</view>
+    </li>
+        <li>
+      <view class="tag">部门</view>
+      <view class="val">{{user.department}}</view>
+    </li>
+  </ul>
+  <view class="footer">
+  <button class='btn' bindtap="logOut">退出登陆</button>
+  </view>
+  
+</view>
