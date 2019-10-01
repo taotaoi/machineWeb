@@ -1,6 +1,8 @@
 // pages/fix/fixing/insert/insert.js
 var tool = require('../../../tools/tool.js');
 var axFixing = require('../../../ax/fix/fixing.js');
+var axSubmit = require('../../../ax/fix/submit.js');
+var axMa = require('../../../ax/machine/machine.js');
 Page({
 
   /**
@@ -9,10 +11,10 @@ Page({
   data: {
     fixid:'',
     user: {},
-    maList: [],
     ma: {
       id: ""
     },
+    submit:{},
     showTab: {
       tab1: true,
       tab2: false,
@@ -24,7 +26,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (e) {
-   
+    if(tool.isNull(e.id)){
+      tool.msg("ERR","id is empty");
+      return;
+    }
     this.setData({
       fixid:e.id
     })
@@ -32,12 +37,38 @@ Page({
     this.init();
   },
   init(){
-    // 获取用户信息
+    // 1、获取用户信息
     if(!tool.isLogin()) return;
     this.setData({
       user:getApp().globalData.user
     });
     console.log(getApp().globalData.user);
+    var that = this;
+    // 2、获取报修信息
+    wx.showLoading({
+      title: 'waiting',
+    })
+    axSubmit.getByFixId(this.data.fixid).then(function(data){
+      console.log(data);
+      if(tool.chkRes(data)) {
+        wx.hideLoading();
+        return;
+      }
+      that.setData({
+        submit:data.data.data[0]
+      }); 
+      return axMa.getByMaId(that.data.submit.machineid);
+    }).then(function(data){
+      // 3、获取machine信息
+      console.log(data);
+      wx.hideLoading();
+      if (tool.chkRes(data)) return;
+      that.setData({
+        ma:data.data.data[0]
+      })
+    });
+
+    
   },
   btn(e){
     console.log(e.detail.value);

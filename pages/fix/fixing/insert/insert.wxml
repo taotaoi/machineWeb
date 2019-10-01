@@ -14,7 +14,9 @@
   </ul>
 </view>
 <!-- 顶部导航tab 结束 -->
-<!-- 报修 开始 -->
+<view class="page-fixingadd" style="{{showTab.tab2?'padding: 0px 20px 10px;':'padding:0px;'}}">
+
+<!-- 报修 开始 tab1 -->
 <view class='page-submit' hidden="{{!showTab.tab1}}">
   <form bindsubmit='btn'>
     <input name='fixuser' value='{{user.id}}' hidden="true"></input>
@@ -37,9 +39,41 @@
 
   </form>
 </view>
-<!-- 报修 结束 -->
+<!-- tab1报修结束 -->
 
-<!-- 设备档案 开始 -->
+  <!-- tab2页面内容 开始 -->
+  <view class="tab1show" hidden="{{!showTab.tab2}}">
+    <!-- 1、故障报修box -->
+    <view class='Box'>
+      <view class='yuan'></view>
+      <ul class="content">
+        <view class='jiantou'></view>
+        <li class="boxTitle">故障报修</li>
+        <!-- 提交人信息 -->
+        <li class="submitUser">
+          <view class="title">提交人:
+            <view class="val">{{submit.submitname}}</view>
+          </view>
+          <view class="Time">{{submit.submitdatetime}}</view>
+        </li>
+        <!-- 故障描述 -->
+        <li class='breakDownAbout'>
+          <view class='title'>故障描述:</view>
+          <view class='val'>{{submit.submitabout}}</view>
+        </li>
+        <!-- 故障类型 -->
+        <li class="breakDownType">
+          <view class='title'>故障类型:</view>
+          <view class='val'>{{submit.fixtype}}</view>
+        </li>
+        <image src='{{myProcess.fixOBJ.submitimage}}' style='height:100px;width:96px;'></image>
+      </ul>
+    </view>
+    <!-- 故障报修box 结束 -->
+  </view>
+  <!-- tab2页面内容 结束 -->
+
+<!-- 设备档案 开始 tab3 -->
 <view class="content" hidden="{{!showTab.tab3}}">
   <ul>
     <li class="machineTile">{{ma.machineid+" "+ma.name}}</li>
@@ -74,3 +108,5 @@
   </ul>
 </view>
 <!-- 设备档案 结束 -->
+
+</view>

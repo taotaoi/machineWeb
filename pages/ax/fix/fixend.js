@@ -1,3 +1,27 @@
+function insert(data) {
+  var p = new Promise(function (req, rej) {
+    wx.request({
+      url: 'https://taox.top/ma/act/fixend.php',
+      method: 'POST',
+      data: {
+        main: 'insert',
+        data: JSON.stringify(data)
+      },
+      header: {
+        // 'content-type': 'application/json' // 默认值
+        'Content-Type': "application/x-www-form-urlencoded"
+      },
+      success(res) {
+        req(res);
+      },
+      fail(err) {
+        rej(err);
+      }
+    });
+  });
+  return p;
+}
+
 function getAllList() {
   var p = new Promise(function (req, rej) {
     wx.request({
@@ -5,6 +29,30 @@ function getAllList() {
       method: 'POST',
       data: {
         main: 'getalllist'
+      },
+      header: {
+        // 'content-type': 'application/json' // 默认值
+        'Content-Type': "application/x-www-form-urlencoded"
+      },
+      success(res) {
+        req(res);
+      },
+      fail(err) {
+        rej(err);
+      }
+    });
+  });
+  return p;
+}
+function getByFixId(data) {
+  var formdata = { fixid: data };
+  var p = new Promise(function (req, rej) {
+    wx.request({
+      url: 'https://taox.top/ma/act/fixend.php',
+      method: 'POST',
+      data: {
+        main: 'getbyfixid',
+        data: JSON.stringify(formdata)
       },
       header: {
         // 'content-type': 'application/json' // 默认值
@@ -45,5 +93,7 @@ function getByFixEndUser(data){
   });
   return p;
 }
+exports.insert = insert;
 exports.getAllList = getAllList;
+exports.getByFixId = getByFixId;
 exports.getByFixEndUser = getByFixEndUser;

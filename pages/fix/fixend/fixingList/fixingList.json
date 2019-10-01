@@ -1,4 +1,6 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "navbar": "/pages/components/navbar/navbar"
+  }
 }

@@ -29,7 +29,12 @@ Page({
         list:data.data.data
       });
     });
-  }
+  },
+  linkToShow(e) {
+    var fixid = e.currentTarget.dataset.data;
+    // console.log(fixid);
+    tool.route("../show/show?id=" + fixid);
+  },
 
 
 })

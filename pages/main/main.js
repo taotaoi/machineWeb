@@ -92,7 +92,7 @@ Page({
       // 4、fixend
       case 'fixEndAdd': {
         wx.navigateTo({
-          url: '../fix/fixend/insert/insert',
+          url: '../fix/fixend/fixingList/fixingList',
         })
         break;
       }

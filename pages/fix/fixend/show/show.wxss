@@ -1,1 +1,151 @@
 /* pages/fix/fixend/show/show.wxss */
+page {
+  height: 100%;
+  font-size: 14px;
+  background-color: #eee;
+}
+.page-fixingshow{
+  
+}
+/* 头部tab 开始 */
+.navTab {
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+}
+
+.navTab ul {
+  display: flex;
+  flex-direction: row;
+}
+
+.navTab ul li {
+  flex: 1;
+  color: #ccc;
+  height: 30px;
+  width: 60px;
+  text-align: center;
+  line-height: 30px;
+}
+
+.navTab .current {
+  color: #42b8fe;
+  border-bottom: 2px solid #42b8fe;
+}
+
+/* 头部tab 结束 */
+
+/* 故障报修box 开始 */
+.Box {
+  margin: 10px 0px 0px;
+  padding-left: 20px;
+  box-sizing: border-box;
+  border-left: 2px solid #42b8fe;
+  position: relative;
+}
+
+.yuan {
+  height: 15px;
+  width: 15px;
+  background-color: #42b8fe;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  left: -8px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 5px;
+  position: relative;
+}
+.jiantou{
+  width: 0px;
+  height: 0px;
+  border-top: #f3f3f3 8px solid;
+  border-right: #fff 12px solid;
+  border-bottom: #f3f3f3 8px solid;
+  position: absolute;
+  top:10px;
+  left: -12px;
+}
+
+.content li {
+  flex-direction: row;
+  height: 30px;
+  line-height: 30px;
+}
+
+.content .boxTitle {
+  font-weight: bold;
+}
+.submitUser {
+  display: flex;
+  flex-direction: row;
+  color: #8f8f8f;
+  border-bottom: 1px solid #ccc;
+}
+.submitUser .title {
+  display: flex;
+  flex-direction: row;
+}
+.submitUser .title .val {
+  padding-left: 5px;
+}
+.submitUser .Time {
+  flex: 1;
+  text-align: right;
+}
+.content .breakDownAbout, .content .breakDownType {
+  display: flex;
+  flex-direction: row;
+}
+.breakDownAbout .title, .breakDownType .title {
+  color: #8f8f8f;
+}
+.breakDownAbout .val, .breakDownType .val {
+  flex: 1;
+  padding-left: 5px;
+}
+/* 故障报修box 结束 */
+
+/* 设备档案 开始 */
+.content {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+   padding: 10px;
+}
+
+.content ul {
+  color: #ccc;
+}
+
+.content li {
+  display: flex;
+  flex-direction: row;
+  height: 30px;
+  line-height: 30px;
+  color: #000;
+}
+
+.content .machineTile {
+  height: 40px;
+  /* border-bottom: 1px solid #ccc; */
+  font-weight: bold;
+}
+
+.content li .ListTitle {
+  flex: 1;
+  color: #8f8f8f;
+}
+
+.content li .ListVal {
+  flex: 3;
+  padding-left: 28px;
+  color: #000;
+}
+/* 设备档案 结束 */
