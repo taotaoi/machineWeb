@@ -42,11 +42,11 @@ Component({
     },
     init(fixid){
       var that = this;
-      var fordata = {fixid:fixid};
+      
       wx.showLoading({
         title: 'waiting',
       });
-      axSu.getByFixId(fordata).then(function(data){
+      axSu.getByFixId(fixid).then(function(data){
         console.log(data);
         
         if(tool.chkRes(data)) return;
