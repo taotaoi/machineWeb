@@ -1,8 +1,10 @@
+const url = getApp().globa.URL +'machine.php';
+
 // 查询所有的list
 function getAllList() {
   var p = new Promise(function (req, rej) {
     wx.request({
-      url: 'https://taox.top/ma/act/machine.php',
+      url: url,
       method: 'POST',
       data: {
         main: 'getalllist'
@@ -26,7 +28,7 @@ function getById(id) {
   var data = {id:id}
   var p = new Promise(function (req, rej) {
     wx.request({
-      url: 'https://taox.top/ma/act/machine.php',
+      url: url,
       method: 'POST',
       data: {
         main: 'getbyid',
@@ -50,7 +52,7 @@ function getByMaId(machineid) {
   var data = { machineid: machineid }
   var p = new Promise(function (req, rej) {
     wx.request({
-      url: 'https://taox.top/ma/act/machine.php',
+      url: url,
       method: 'POST',
       data: {
         main: 'getbymaid',

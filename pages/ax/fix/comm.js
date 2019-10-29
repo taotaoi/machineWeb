@@ -1,8 +1,10 @@
+const url = getApp().globa.URL + 'common.php';
+
 // 根据fixid 查询当前的状态
 function getStatusByFixId(data){
   var p1 = new Promise(function (req, rej) {
     wx.request({
-      url: 'https://taox.top/ma/act/common.php',
+      url: url,
       method: 'POST',
       data: {
         main: 'getstatusbyfixid',

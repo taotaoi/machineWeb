@@ -1,6 +1,8 @@
 //app.js
 App({
-  globa: {},
+  globa: {
+    URL:'https://taotaoi.oicp.vip/ma/act/'
+  },
   onLaunch: function () {
     var that = this;
     // 获取头部总高度
@@ -12,10 +14,6 @@ App({
         console.log(err);
       }
     });
-
-
-  
-  
   },
   globalData: {
     user: null

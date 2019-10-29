@@ -1,7 +1,9 @@
+const url = getApp().globa.URL + 'submit.php';
+
 function submitAdd(data) {
   var p = new Promise(function (req, rej) {
     wx.request({
-      url: 'https://taox.top/ma/act/submit.php',
+      url: url,
       method: 'POST',
       data: {
         main: 'insert',
@@ -25,7 +27,7 @@ function submitAdd(data) {
 function getAlllist(){
   var p = new Promise(function (req, rej) {
     wx.request({
-      url: 'https://taox.top/ma/act/submit.php',
+      url: url,
       method: 'POST',
       data: {
         main: 'getalllist'
@@ -49,7 +51,7 @@ function getByFixId(data){
   var formdata = {fixid:data};
   var p = new Promise(function (req, rej) {
     wx.request({
-      url: 'https://taox.top/ma/act/submit.php',
+      url: url,
       method: 'POST',
       data: {
         main: 'getbyfixid',
@@ -74,7 +76,7 @@ function getByUserId(data) {
   var formdata = {userid:data};
   var p = new Promise(function (req, rej) {
     wx.request({
-      url: 'https://taox.top/ma/act/submit.php',
+      url: url,
       method: 'POST',
       data: {
         main: 'getbyuser',

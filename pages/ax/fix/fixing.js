@@ -1,7 +1,9 @@
+const url = getApp().globa.URL + 'fixing.php';
+
 function insert(data) {
   var p = new Promise(function (req, rej) {
     wx.request({
-      url: 'https://taox.top/ma/act/fixing.php',
+      url: url,
       method: 'POST',
       data: {
         main: 'insert',
@@ -25,7 +27,7 @@ function insert(data) {
 function getAllList() {
   var p = new Promise(function (req, rej) {
     wx.request({
-      url: 'https://taox.top/ma/act/fixing.php',
+      url: url,
       method: 'POST',
       data: {
         main: 'getalllist'
@@ -48,7 +50,7 @@ function getByFixId(data) {
   var formdata = { fixid: data };
   var p = new Promise(function (req, rej) {
     wx.request({
-      url: 'https://taox.top/ma/act/fixing.php',
+      url: url,
       method: 'POST',
       data: {
         main: 'getbyfixid',
@@ -73,7 +75,7 @@ function getByFixUser(data) {
   var formdata = { fixuser: data };
   var p = new Promise(function (req, rej) {
     wx.request({
-      url: 'https://taox.top/ma/act/fixing.php',
+      url: url,
       method: 'POST',
       data: {
         main: 'getbyfixuser',
@@ -98,7 +100,7 @@ function getBySubmitUser(data) {
   var formdata = { submituser: data };
   var p = new Promise(function (req, rej) {
     wx.request({
-      url: 'https://taox.top/ma/act/fixing.php',
+      url: url,
       method: 'POST',
       data: {
         main: 'getbysubmituser',

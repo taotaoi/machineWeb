@@ -1,7 +1,9 @@
+const url = getApp().globa.URL + 'user.php';
+
 function reg(data) {
   var p = new Promise(function (req, rej) {
     wx.request({
-      url: "https://taox.top/ma/act/user.php",
+      url: url,
       method: 'post',
       data: {
         main: 'reg',
@@ -26,7 +28,7 @@ function reg(data) {
 function getUserByOpenId(data){
   var p = new Promise(function (req, rej) {
     wx.request({
-      url: "https://taox.top/ma/act/user.php",
+      url: url,
       method: 'post',
       data: {
         main: 'getuserbyopenid',
@@ -81,7 +83,7 @@ function getCode() {
 function getOpenIdByCode(data) {
   var p = new Promise(function (req, rej) {
     wx.request({
-      url: "https://taox.top/ma/act/user.php",
+      url: url,
       method: 'post',
       data: {
         main: 'getopenid',
