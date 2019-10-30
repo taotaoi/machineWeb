@@ -6,6 +6,21 @@
   font-family: '微软雅黑';
   background-color: #eee;
 }
+.title{
+   height: 40px;
+   line-height: 40px;
+   position: relative;
+}
+.menuico{
+ height: 20px;
+ width: 15px;
+ line-height: 5px;
+ font-size: 40px;
+ font-weight: bold;
+ position: absolute;
+ right: 20px;
+ top: 5px;
+}
 .box {
   
   width: 100%;

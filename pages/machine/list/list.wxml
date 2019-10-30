@@ -1,5 +1,13 @@
 <!--pages/machine/list/list.wxml-->
 <navbar page-name="你当前页面的名字"></navbar>
+<searchbar myShow="{{show}}" bind:selectReq="selectReq"></searchbar>
+<view class="title">总数：{{machineList.length}}
+
+<view class='menuico' bindtap="showMenu">
+  ...
+</view>
+</view>
+
 <view class='fa'>
   <view class='box' wx:for="{{machineList}}" wx:key="item.machineid" bindtap='linkToMa' data-data='{{item.id}}'>
     <view class='part1'>

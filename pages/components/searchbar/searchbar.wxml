@@ -1,0 +1,19 @@
+<!--pages/components/searchbar/searchbar.wxml-->
+<view class="com-searchbar" style="{{myShow?'':'display: none;'}}">
+  <view class="select-bk" bindtap="closeMenu">
+  </view>
+  <view class="{{myShow?'menu1':'menu2'}}" style="padding-top:{{navH}}px">
+    <!-- 内容 开始 -->
+    <view class="search1">
+      <form bindsubmit='btn'>
+        <view class="title">输入关键字</view>
+        <input class="{{inputErr?'inputErr':'val'}}" bindinput="inputWatch" name="val" value="{{val}}"></input>
+        <button class='btn' form-type="submit">搜索</button>
+        <button class='btn' form-type="reset">清空</button>
+      </form>
+    </view>
+
+    <!-- 内容 结束 -->
+  </view>
+  <slot></slot>
+</view>
