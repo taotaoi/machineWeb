@@ -1,6 +1,6 @@
 // pages/fix/fixend/fixingList/fixingList.js
-// var axFixing = require('../../../ax/fix/fixing.js');
-var axFixEnd = require('../../../ax/fix/fixend.js');
+var axFixing = require('../../../ax/fix/fixing.js');
+// var axFixEnd = require('../../../ax/fix/fixend.js');
 var tool = require('../../../tools/tool.js');
 Component({
   /**
@@ -29,7 +29,8 @@ Component({
       wx.showLoading({
         title: 'waiting',
       })
-      axFixEnd.getAllList().then(function (data) {
+      // 不是查询已经结束的列表，是查询待处理为结束，所以为fixing
+      axFixing.getAllList().then(function (data) {
         wx.hideLoading();
         if (tool.chkRes(data)) return;
         console.log(data);
