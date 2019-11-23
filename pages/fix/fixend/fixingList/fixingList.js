@@ -1,5 +1,6 @@
 // pages/fix/fixend/fixingList/fixingList.js
-var axFixing = require('../../../ax/fix/fixing.js');
+// var axFixing = require('../../../ax/fix/fixing.js');
+var axFixEnd = require('../../../ax/fix/fixend.js');
 var tool = require('../../../tools/tool.js');
 Component({
   /**
@@ -28,7 +29,7 @@ Component({
       wx.showLoading({
         title: 'waiting',
       })
-      axFixing.getAllList().then(function (data) {
+      axFixEnd.getAllList().then(function (data) {
         wx.hideLoading();
         if (tool.chkRes(data)) return;
         console.log(data);

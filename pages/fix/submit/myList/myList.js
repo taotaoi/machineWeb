@@ -35,6 +35,7 @@ Component({
       wx.showLoading({
         title: 'waiting',
       });
+      console.log(this.data.user.id);
       axSubmit.getByUserId(this.data.user.id).then(function(data){
         console.log(data);
         wx.hideLoading();
