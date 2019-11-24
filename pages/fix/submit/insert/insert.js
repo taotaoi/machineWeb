@@ -2,6 +2,7 @@
 var tool = require('../../../tools/tool.js');
 var axMa = require('../../../ax/machine/machine.js');
 var axFix = require('../../../ax/fix/submit.js');
+var axFixType = require('../../../ax/fix/fixtype.js');
 Page({
 
   /**
@@ -16,6 +17,8 @@ Page({
     ma: {
       id: ""
     },
+    fixType:[],
+    fixTypeVal:"",
     showTab: {
       tab1: true,
       tab2: false,
@@ -34,6 +37,25 @@ Page({
     this.setData({
       user: getApp().globalData.user
     })
+    // 2、获取维修type
+    var that = this;
+    wx.showLoading({
+      title: 'waiting',
+    })
+    axFixType.getAllList().then(function(res){
+      
+      console.log(res);
+      wx.hideLoading();
+      if(tool.chkRes(res)) return;
+      var tmp = [];
+      for (let e of res.data.data){
+        tmp.push(e.name);
+      }
+      that.setData({
+        fixType: tmp
+      })
+    })
+    
   },
   maIdWatch(e){
     console.log("chk in");
@@ -155,5 +177,12 @@ Page({
         });
       }
     }
+  },
+
+  bindPickerChange(e){
+    console.log('pick:', this.data.fixType[e.detail.value]);
+    this.setData({
+      fixTypeVal: this.data.fixType[e.detail.value]
+    });
   },
 })

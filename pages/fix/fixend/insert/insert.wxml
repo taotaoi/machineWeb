@@ -108,46 +108,8 @@
   <!-- tab2页面内容 结束 -->
 
 <!-- 设备档案 开始 tab3 -->
-<view class="content" hidden="{{!showTab.tab3}}">
-  <ul>
-    <li class="machineTile">{{ma.machineid+" "+ma.name}}</li>
-    <li>
-      <span class="ListTitle">设备类型</span>
-      <text class='ListVal'>{{ma.type}}</text>
-    </li>
-    <li>
-      <span class="ListTitle">规格型号</span>
-      <text class='ListVal'>{{ma.model}}</text>
-    </li>
-        <li>
-      <span class="ListTitle">使用部门</span>
-      <text class='ListVal'>{{ma.department}}</text>
-    </li>
-        <li>
-      <span class="ListTitle">安装位置</span>
-      <text class='ListVal'>{{ma.installaddr}}</text>
-    </li>
-    <li>
-      <span class="ListTitle">购置日期</span>
-      <text class='ListVal'>{{ma.payday}}</text>
-    </li>
-    <li>
-      <span class="ListTitle">启用日期</span>
-      <text class='ListVal'>{{ma.usedday}}</text>
-    </li>
-    <li>
-      <span class="ListTitle">设备状态</span>
-      <text class='ListVal'>{{ma.status}}</text>
-    </li>
-    <li>
-      <span class="ListTitle">备注信息</span>
-      <text class='ListVal'>{{ma.describe}}</text>
-    </li>
-    <li>
-      <span class="ListTitle">设备图片</span>
-      <text class='ListVal'>{{ma.image}}</text>
-    </li>
-  </ul>
+<view hidden="{{!showTab.tab3}}">
+<ma ma="{{ma}}"></ma>
 </view>
 <!-- 设备档案 结束 -->
 

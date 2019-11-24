@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "navbar": "/pages/components/navbar/navbar"
+    "navbar": "/pages/components/navbar/navbar",
+    "ma" : "/pages/components/machine/machine"
   }
 }

@@ -1,0 +1,39 @@
+/* pages/components/machine/machine.wxss */
+
+/* 设备档案 开始 */
+.content {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+   padding: 10px;
+}
+
+.content ul {
+  color: #ccc;
+}
+
+.content li {
+  display: flex;
+  flex-direction: row;
+  height: 30px;
+  line-height: 30px;
+  color: #000;
+}
+
+.content .machineTile {
+  height: 40px;
+  /* border-bottom: 1px solid #ccc; */
+  font-weight: bold;
+}
+
+.content li .ListTitle {
+  flex: 1;
+  color: #8f8f8f;
+}
+
+.content li .ListVal {
+  flex: 3;
+  padding-left: 28px;
+  color: #000;
+}
+/* 设备档案 结束 */

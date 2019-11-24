@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "navbar": "/pages/components/navbar/navbar",
+    "ma": "/pages/components/machine/machine",
     "inputsea":"/pages/components/inputsearch/inputsearch"
   }
 }
