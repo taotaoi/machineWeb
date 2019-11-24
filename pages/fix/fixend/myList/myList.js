@@ -1,4 +1,7 @@
 // pages/fix/fixend/myList/myList.js
+/**
+ * 我提交的结束：当前登陆id提交的fixend。
+ */
 var tool = require('../../../tools/tool.js');
 var axFixEnd = require('../../../ax/fix/fixend.js');
 Page({

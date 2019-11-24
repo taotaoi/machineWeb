@@ -1,4 +1,5 @@
 // pages/fix/submit/show/show.js
+
 var tool = require('../../../tools/tool.js');
 var axSu = require('../../../ax/fix/submit.js');
 var axMa = require('../../../ax/machine/machine.js');

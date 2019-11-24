@@ -1,4 +1,7 @@
 // pages/fix/submit/myList/myList.js
+/**
+ *  我的报修：当前登陆用户ID提交的submit list、包括后续已进入fix状态list、以及进入fixend状态list
+ */
 var axSubmit = require('../../../ax/fix/submit.js');
 var tool = require('../../../tools/tool.js');
 Component({

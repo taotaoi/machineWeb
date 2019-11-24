@@ -1,46 +1,85 @@
 <!--pages/components/machine/machine.wxml-->
 <view class="content">
-<ul>
-      <li class="machineTile">{{ma.machineid+" "+ma.name}}</li>
-      <li>
-        <span class="ListTitle">设备类型</span>
-        <text class='ListVal'>{{ma.type}}</text>
-      </li>
-      <li>
-        <span class="ListTitle">规格型号</span>
-        <text class='ListVal'>{{ma.model}}</text>
-      </li>
-            <li>
-        <span class="ListTitle">使用部门</span>
-        <text class='ListVal'>{{ma.departent}}</text>
-      </li>
-            <li>
-        <span class="ListTitle">安装位置</span>
-        <text class='ListVal'>{{ma.installaddr}}</text>
-      </li>
-      <li>
-        <span class="ListTitle">购置日期</span>
-        <text class='ListVal'>{{ma.payday}}</text>
-      </li>
-      <li>
-        <span class="ListTitle">启用日期</span>
-        <text class='ListVal'>{{ma.usedday}}</text>
-      </li>
-      <li>
-        <span class="ListTitle">设备状态</span>
-        <text class='ListVal'>{{ma.status}}</text>
-      </li>
-            <li>
-        <span class="ListTitle">设备原值</span>
-        <text class='ListVal'>{{ma.cost}}</text>
-      </li>
-      <li>
-        <span class="ListTitle">备注信息</span>
-        <text class='ListVal'>{{ma.describe}}</text>
-      </li>
-      <li>
-        <span class="ListTitle">设备图片</span>
-        <text class='ListVal'>{{ma.image}}</text>
-      </li>
-    </ul>
-    </view>
+  <ul>
+    <li class="machineTile">{{ma.machineid+" "+ma.name}}</li>
+    <!-- 基本信息 -->
+    <li>
+      <span class="ListTitle">设备类型</span>
+      <text class='ListVal'>{{ma.type}}</text>
+    </li>
+    <li>
+      <span class="ListTitle">规格型号</span>
+      <text class='ListVal'>{{ma.model}}</text>
+    </li>
+    <li>
+      <span class="ListTitle">购置日期</span>
+      <text class='ListVal'>{{ma.payday}}</text>
+    </li>
+    <li>
+      <span class="ListTitle">启用日期</span>
+      <text class='ListVal'>{{ma.usedday}}</text>
+    </li>
+    <li>
+      <span class="ListTitle">设备状态</span>
+      <text class='ListVal'>{{ma.status}}</text>
+    </li>
+    <li>
+      <span class="ListTitle">备注信息</span>
+      <text class='ListVal'>{{ma.describe}}</text>
+    </li>
+    <li>
+      <span class="ListTitle">设备图片</span>
+      <text class='ListVal'>{{ma.image}}</text>
+    </li>
+
+    <!-- 基本信息 结束 -->
+    <li></li>
+    <!-- 使用信息 -->
+    <li>
+      <span class="ListTitle">使用部门</span>
+      <text class='ListVal'>{{ma.departent}}</text>
+    </li>
+    <li>
+      <span class="ListTitle">安装位置</span>
+      <text class='ListVal'>{{ma.installaddr}}</text>
+    </li>
+    <li>
+      <span class="ListTitle">使用人</span>
+      <text class='ListVal'>{{ma.user}}</text>
+    </li>
+    <li>
+      <span class="ListTitle">验收人</span>
+      <text class='ListVal'>{{ma.acceptor}}</text>
+    </li>
+    <li>
+      <span class="ListTitle">验收情况</span>
+      <text class='ListVal'>{{ma.accept}}</text>
+    </li>
+    <!-- 使用信息 结束 -->
+
+    <li></li>
+
+    <!-- 出厂信息 -->
+    <li>
+      <span class="ListTitle">制造厂家</span>
+      <text class='ListVal'>{{ma.makelocal}}</text>
+    </li>
+    <li>
+      <span class="ListTitle">出厂日期</span>
+      <text class='ListVal'>{{ma.makeday}}</text>
+    </li>
+    <li>
+      <span class="ListTitle">主机编号</span>
+      <text class='ListVal'>{{ma.makeid}}</text>
+    </li>
+    <li>
+      <span class="ListTitle">维修周期</span>
+      <text class='ListVal'>{{ma.fixcycle}}</text>
+    </li>
+    <li>
+      <span class="ListTitle">折旧年限</span>
+      <text class='ListVal'>{{ma.endyear}}</text>
+    </li>
+    <!-- 出厂信息 结束 -->
+  </ul>
+</view>

@@ -39,7 +39,7 @@
         </li>
         <li class="breakDownType">
           <view class='title'>维修费用:</view>
-          <view class='val'>{{fixEnd.cost}}</view>
+          <view class='val'>{{fixEnd.cost+"元"}}</view>
         </li>
       </ul>
     </view>
