@@ -1,0 +1,191 @@
+/* pages/components/searchbar2/searchbar2.wxss */
+page {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.com-searchbar2{
+  font-size: 14px;
+}
+
+.select-bk {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* 入场 */
+
+.menu1 {
+  height: 100%;
+  width: 80%;
+  background-color: #fff;
+  position: absolute;
+  z-index: 99;
+  top: 0px;
+  right: -80%;
+  flex-direction: column;
+  animation-name: move;
+  animation-duration: 300ms;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+}
+
+.menu1 .search1 {
+  padding: 0 5px;
+}
+
+/* 日期选着 开始 */
+
+.date-select {
+  height: auto;
+ padding-bottom:10px; 
+  border-bottom: 1px solid #eee;
+}
+
+.date-select .date {
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+   padding: 0 0 0 15px;
+  /* font-size: 13px; */
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.18); */
+}
+
+.date-select span {
+  width: 10px;
+  line-height: 30px;
+  margin: 0 5px;
+  float: left;
+}
+
+.date-select:after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+picker {
+  float: left;
+  width: 100px;
+}
+
+/* 日期选择 结束 */
+
+/* 状态选择 开始 */
+
+.status-select {
+  height: auto;
+  margin-top: 20px;
+   padding-bottom:15px; 
+  border-bottom: 1px solid #eee;
+}
+
+.status-select .title {
+  height: 20px;
+}
+
+.status-select ul {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.status-select ul:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.status-select li {
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5px;
+  margin: 0 10px;
+  border-radius: 5px;
+  border: 2px solid #eee;
+}
+
+.status-select li:active {
+  border: 2px solid skyblue;
+}
+
+/* 状态选择 结束 */
+
+/* 关键字搜索 开始 */
+.text-search {
+  height: auto;
+  padding: 10px 0;
+}
+.val {
+  height: 30px;
+  border-bottom: 1px solid rgba(0,0,0,.18);
+}
+/* 关键字搜索 结束 */
+
+/* 退场 未使用 */
+.menu2 {
+  height: 100%;
+  width: 60%;
+  background-color: #fff;
+  position: absolute;
+  z-index: 99;
+  top: 0px;
+  right: -60%;
+  flex-direction: column;
+  /* animation-name: back; */
+  animation-duration: 300ms;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+}
+
+
+
+.footer {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  left: 0;
+  /* bottom: 0;  style控制*/
+  z-index: 99;
+  /* background-color: pink; */
+}
+.footer .btn {
+  height: 40px;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  font-size: 14px;
+  margin: 10px 5px ;
+  border-radius: 3px;
+  background-color: #3ba7ff;
+  color: #fff;
+}
+@keyframes move {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes back {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}

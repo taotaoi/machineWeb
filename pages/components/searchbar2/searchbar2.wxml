@@ -1,0 +1,55 @@
+<!--pages/components/searchbar2/searchbar2.wxml-->
+<view class="com-searchbar2" style="{{myShow?'':'display: none;'}}">
+  <view class="select-bk" bindtap="closeMenu">
+  </view>
+  <view class="{{myShow?'menu1':'menu2'}}" style="padding-top:{{navH}}px">
+    <!-- 内容 开始 -->
+    <view class="search1">
+      <form bindsubmit='btn'>
+        <!-- 日期选择 开始 -->
+        <view class="date-select">
+          <view class="title">日期选择</view>
+          <picker mode="date" value="{{formdata.date1}}" start="2015-09-01" end="2050-09-01" bindchange="bindDateChange1">
+            <view class="date">
+              {{formdata.date1}}
+            </view>
+          </picker>
+          <span>-</span>
+          <picker mode="date" value="{{formdata.date2}}" start="2015-09-01" end="2050-09-01" bindchange="bindDateChange2">
+            <view class="date">
+              {{formdata.date2}}
+            </view>
+          </picker>
+        </view>
+        <!-- 日期选择 结束 -->
+
+        <!-- 状态选择 开始 -->
+        <view class="status-select">
+          <view class="title">状态选择</view>
+          <ul>
+            <li catchtap="btn1" style="{{formdata.status.submit?'background-color: skyblue;':''}}">报修中</li>
+            <li catchtap="btn2" style="{{formdata.status.fixing?'background-color: skyblue;':''}}">维修中</li>
+            <li catchtap="btn3" style="{{formdata.status.fixend?'background-color: skyblue;':''}}">已结束</li>
+          </ul>
+        </view>
+        <!-- 状态选择 结束 -->
+
+        <!-- 关键字搜索 开始 -->
+        <view class="text-search">
+          <view class="title">输入关键字</view>
+          <input class="{{inputErr?'inputErr':'val'}}" bindinput="inputWatch" name="val" value="{{val}}"></input>
+        </view>
+        <!-- 关键字搜索 结束 -->
+
+        <view class="footer" style="bottom:{{navH}}px">
+          <button class='btn' form-type="submit">搜索</button>
+          <button class='btn' form-type="reset" catchtap="reset">清空</button>
+        </view>
+
+      </form>
+    </view>
+
+    <!-- 内容 结束 -->
+  </view>
+  <slot></slot>
+</view>

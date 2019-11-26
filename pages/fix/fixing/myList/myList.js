@@ -34,13 +34,14 @@ Page({
     var tmp = [];
     axFixing.getByFixUser(this.data.user.id).then(function (data) {
       console.log(data);
-      wx.hideLoading();
+     
       if (tool.chkRes(data)) return;
       tmp = tmp.concat(data.data.data);
       return axFixEnd.getByFixUser(that.data.user.id);
       // 拼接当前用户id提交的维修，已经进入fixend状态的list
     }).then(function(data){
       console.log(data);
+      wx.hideLoading();
       if (tool.chkRes(data)) return;
       if(data.data.data.length>0){
         tmp = tmp.concat(data.data.data);

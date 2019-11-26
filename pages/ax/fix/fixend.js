@@ -119,8 +119,34 @@ function getByFixUser(data){
   });
   return p;
 }
+
+function getBySubmitUser(data) {
+  var formdata = { fixuser: data };
+  var p = new Promise(function (req, rej) {
+    wx.request({
+      url: url,
+      method: 'POST',
+      data: {
+        main: 'getbysubmituser',
+        data: JSON.stringify(formdata)
+      },
+      header: {
+        // 'content-type': 'application/json' // 默认值
+        'Content-Type': "application/x-www-form-urlencoded"
+      },
+      success(res) {
+        req(res);
+      },
+      fail(err) {
+        rej(err);
+      }
+    });
+  });
+  return p;
+}
 exports.insert = insert;
 exports.getAllList = getAllList;
 exports.getByFixId = getByFixId;
 exports.getByFixEndUser = getByFixEndUser;
 exports.getByFixUser = getByFixUser;
+exports.getBySubmitUser = getBySubmitUser;

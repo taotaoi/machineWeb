@@ -1,8 +1,17 @@
 <!--pages/fix/submit/myList/myList.wxml-->
 <navbar page-name="我的报修"></navbar>
+<searchbar myShow="{{searchShow}}"></searchbar>
+
 <view class="page-list">
-  <view>{{(list.length<1)?'空':''}}</view>
-   <view class="box">
+  <view class="header">
+    <view class='menuico' bindtap="showMenu">
+      ...
+    </view>
+  </view>
+
+  <view>{{(list.length
+    <1)? '空': ''}}</view>
+      <view class="box">
         <ul wx:for="{{list}}" wx:key="{{item.fixid}}" bindtap="linkToShow" data-data="{{item.fixid}}">
           <li>
             <div class="machineName">{{item.name}}</div>
@@ -18,4 +27,4 @@
         </ul>
 
       </view>
-      </view>
+  </view>
