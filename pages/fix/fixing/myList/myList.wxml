@@ -1,6 +1,14 @@
 <!--pages/fix/fixing/myList/myList.wxml-->
 <navbar page-name="我的维修"></navbar>
+<searchbar myShow="{{searchShow}}" bind:searchReq="searchReq" WCall="fixing"></searchbar>
+
 <view class="page-list">
+  <view class="header">
+    <view class='menuico' bindtap="showMenu">
+      ...
+    </view>
+  </view>
+
   <view>{{(list.length<1)?'空':''}}</view>
    <view class="box">
         <ul wx:for="{{list}}" wx:key="{{item.fixid}}" bindtap="linkToShow" data-data="{{item}}">

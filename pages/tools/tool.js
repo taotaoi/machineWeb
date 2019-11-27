@@ -107,6 +107,28 @@ function chkRes(obj) {
     return true;
   }
 }
+function dateMin(date1, date2) {
+  var oDate1 = new Date(date1);
+  var oDate2 = new Date(date2);
+  if (oDate1.getTime() < oDate2.getTime()) {
+    // console.log('第一个小');
+    return false;
+  } else {
+    // console.log('第二个小');
+    return true;
+  }
+}
+function dateMax(date1, date2) {
+  var oDate1 = new Date(date1);
+  var oDate2 = new Date(date2);
+  if (oDate1.getTime() > oDate2.getTime()) {
+    // console.log('第一个大');
+    return false;
+  } else {
+    // console.log('第二个大');
+    return true;
+  }
+}
 
 function ax(main, data, url) {
   var p = new Promise(function (req, rej) {
@@ -140,3 +162,5 @@ exports.ax = ax;
 exports.msgRout1 = msgRout1;
 exports.msgLinkToBar = msgLinkToBar;
 exports.isLogin = isLogin;
+exports.dateMax = dateMax;
+exports.dateMin = dateMin;

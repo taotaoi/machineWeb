@@ -1,7 +1,7 @@
 /* pages/components/searchbar/searchbar.wxss */
 .fcom-searchbar {
   font-size: 14px;
- 
+  
 }
 .select-bk {
   height: 100%;

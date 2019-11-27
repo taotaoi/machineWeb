@@ -27,7 +27,7 @@
         <view class="status-select">
           <view class="title">状态选择</view>
           <ul>
-            <li catchtap="btn1" style="{{formdata.status.submit?'background-color: skyblue;':''}}">报修中</li>
+            <li wx:if="{{WCall=='submit'?true:false}}" catchtap="btn1" style="{{formdata.status.submit?'background-color: skyblue;':''}}">报修中</li>
             <li catchtap="btn2" style="{{formdata.status.fixing?'background-color: skyblue;':''}}">维修中</li>
             <li catchtap="btn3" style="{{formdata.status.fixend?'background-color: skyblue;':''}}">已结束</li>
           </ul>
@@ -42,7 +42,7 @@
         <!-- 关键字搜索 结束 -->
 
         <view class="footer" style="bottom:{{navH}}px">
-          <button class='btn' form-type="submit">搜索</button>
+          <button class='btn' form-type="submit">确定</button>
           <button class='btn' form-type="reset" catchtap="reset">清空</button>
         </view>
 

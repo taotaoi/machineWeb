@@ -62,15 +62,36 @@ Component({
           'res.fixend': res[2].data.data,
           list: tmp
         });
-
       })
+    },
+    searchReq(e){
+      var tmp = e.detail;
+      console.log(tmp);
+      this.setData({list:[]})
+      // 1、状态筛选
+      if(tmp.status.submit){
+        this.setData({ list: this.data.res.submit })
+      }
+      if (tmp.status.fixing){
+        this.setData({ list: this.data.list.concat(this.data.res.fixing) })
+      }
+      if (tmp.status.fixend) {
+        this.setData({ list: this.data.list.concat(this.data.res.fixend) })
+      }
+      // 2、日期筛选
+      if(tmp.date1 !="0000-00-00" && tmp.date2 !="0000-00-00"){
+        console.log("select date on");
+        var tmpArr = [];
+        for(let e of this.data.list){
+          if (tool.dateMax(tmp.date1, e.submitdatetime) && tool.dateMin(tmp.date2, e.submitdatetime)){
+            console.log(e);
+            tmpArr.push(e);
+          }
+        }
+        this.setData({ list: tmpArr })
+      }
 
-      // axSubmit.getByUserId(this.data.user.id).then(function(data){
-      //   console.log(data);
-      //   wx.hideLoading();
-      //   if(tool.chkRes(data)) return;
-      //  
-      // });
+      // 3、关键字筛选
     },
     linkToShow(par) {
       var fixid = par.currentTarget.dataset.data;

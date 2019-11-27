@@ -1,8 +1,6 @@
 /* pages/components/searchbar2/searchbar2.wxss */
 page {
   width: 100%;
-  height: auto;
-  overflow: hidden;
 }
 .com-searchbar2{
   font-size: 14px;
@@ -115,7 +113,7 @@ picker {
 }
 
 .status-select li:active {
-  border: 2px solid skyblue;
+  /* border: 2px solid skyblue; */
 }
 
 /* 状态选择 结束 */

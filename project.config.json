@@ -13,7 +13,7 @@
 		"coverView": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.8.2",
+	"libVersion": "2.9.3",
 	"appid": "wx40f57a30b9ec9399",
 	"projectname": "machineWX",
 	"debugOptions": {

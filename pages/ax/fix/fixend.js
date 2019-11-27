@@ -121,7 +121,7 @@ function getByFixUser(data){
 }
 
 function getBySubmitUser(data) {
-  var formdata = { fixuser: data };
+  var formdata = { submituser: data };
   var p = new Promise(function (req, rej) {
     wx.request({
       url: url,

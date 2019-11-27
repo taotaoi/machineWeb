@@ -12,6 +12,9 @@ Component({
     myShow: {
       type: Boolean
     },
+    WCall: {
+      type: String
+    }
   },
 
   /**
@@ -28,7 +31,8 @@ Component({
         submit: true,
         fixing: true,
         fixend: true
-      }
+      },
+      searchVal:""
     }
   },
   ready() {
@@ -69,8 +73,17 @@ Component({
     btn3(){
       this.data.formdata.status.fixend ? this.setData({ 'formdata.status.fixend': false }) : this.setData({ 'formdata.status.fixend': true })
     },
+    inputWatch(e){
+      var tmp = e.detail;
+      this.setData({
+        searchVal:tmp
+      })
+    },
+    // 确认提交
     btn(e){
-
+      console.log(this.data.WCall);
+      this.triggerEvent("searchReq", this.data.formdata);
+      this.closeMenu();
     },
     reset(){
       this.setData({
