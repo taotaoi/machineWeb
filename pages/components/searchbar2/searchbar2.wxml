@@ -24,7 +24,7 @@
         <!-- 日期选择 结束 -->
 
         <!-- 状态选择 开始 -->
-        <view class="status-select">
+        <view class="status-select" wx:if="{{WCall!='submitList'?true:false}}">
           <view class="title">状态选择</view>
           <ul>
             <li wx:if="{{WCall=='submit'?true:false}}" catchtap="btn1" style="{{formdata.status.submit?'background-color: skyblue;':''}}">报修中</li>

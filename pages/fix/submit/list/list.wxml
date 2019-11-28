@@ -1,6 +1,13 @@
 <!--pages/fix/submit/list/list.wxml-->
 <navbar page-name="所有报修列表"></navbar>
+<searchbar myShow="{{searchShow}}" WCall="submitList" bind:searchReq="searchReq"></searchbar>
 <view class="page-list">
+<view class="header">
+    <view class="size">{{list.length}}</view>
+    <view class='menuico' bindtap="showMenu">
+      ...
+    </view>
+  </view>
    <view class="box">
         <ul wx:for="{{list}}" wx:key="{{item.fixid}}" bindtap="linkToShow" data-data="{{item.fixid}}">
           <li>
