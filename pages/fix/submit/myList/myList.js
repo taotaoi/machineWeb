@@ -83,15 +83,25 @@ Component({
         console.log("select date on");
         var tmpArr = [];
         for(let e of this.data.list){
+          // 起始日期与e相同 或 结束日期与e相同
+          var t1 = tmp.date1.substring(0, 10);
+          var t2 = tmp.date2.substring(0, 10);
+          var d1 = e.submitdatetime.substring(0, 10);
+          console.log(tmp.date1.substring(0, 10));
+          console.log(e.submitdatetime.substring(0, 10));
+          if ((d1 == t1) || (d1 == t2) ){
+            tmpArr.push(e);
+          }
+          // 如果有在范围内的e push
           if (tool.dateMax(tmp.date1, e.submitdatetime) && tool.dateMin(tmp.date2, e.submitdatetime)){
-            console.log(e);
+            // console.log(e);
             tmpArr.push(e);
           }
         }
         this.setData({ list: tmpArr })
       }
-
       // 3、关键字筛选
+      
     },
     linkToShow(par) {
       var fixid = par.currentTarget.dataset.data;

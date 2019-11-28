@@ -10,9 +10,17 @@
           <li>
             <div class="machineId">设备编号：{{item.machineid}}</div>
           </li>
-          <li class="liEnd">
+           <li class="liEnd">
             <div class="submitName">提交人：{{item.submitname}}</div>
-            <div class="dateTime"></div>
+            <div class="dateTime">{{item.submitdatetime}}</div>
+          </li>
+          <li class="liEnd">
+            <div class="submitName">维修人：{{item.fixingname}}</div>
+            <div class="dateTime">{{item.fixday}}</div>
+          </li>
+          <li class="liEnd">
+            <div class="submitName">结束人：{{item.fixendname}}</div>
+            <div class="dateTime">{{item.fixendday}}</div>
           </li>
         </ul>
 

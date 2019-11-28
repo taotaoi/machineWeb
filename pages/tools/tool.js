@@ -129,6 +129,14 @@ function dateMax(date1, date2) {
     return true;
   }
 }
+// 日期格式化返回年月日，去掉时间
+function getDate(da){
+  da = new Date(da);
+  var year = da.getFullYear();
+  var month = da.getMonth() + 1;
+  var date = da.getDate();
+  return ([year, month, date].join('-'));
+}
 
 function ax(main, data, url) {
   var p = new Promise(function (req, rej) {
@@ -164,3 +172,4 @@ exports.msgLinkToBar = msgLinkToBar;
 exports.isLogin = isLogin;
 exports.dateMax = dateMax;
 exports.dateMin = dateMin;
+exports.getDate = getDate;

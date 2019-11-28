@@ -73,14 +73,20 @@ Component({
     btn3(){
       this.data.formdata.status.fixend ? this.setData({ 'formdata.status.fixend': false }) : this.setData({ 'formdata.status.fixend': true })
     },
-    inputWatch(e){
+    inputWatch1(e){
       var tmp = e.detail;
+      console.log(e);
       this.setData({
-        searchVal:tmp
+        'formdata.searchVal':tmp
       })
     },
     // 确认提交
     btn(e){
+      // console.log(e.detail.value.val);
+      // 设置关键字
+      this.setData({
+        'formdata.searchVal': e.detail.value.val
+      })
       console.log(this.data.WCall);
       this.triggerEvent("searchReq", this.data.formdata);
       this.closeMenu();

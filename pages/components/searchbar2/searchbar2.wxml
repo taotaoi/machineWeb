@@ -9,13 +9,13 @@
         <!-- 日期选择 开始 -->
         <view class="date-select">
           <view class="title">日期选择</view>
-          <picker mode="date" value="{{formdata.date1}}" start="2015-09-01" end="2050-09-01" bindchange="bindDateChange1">
+          <picker mode="date" value="{{formdata.date1}}" start="2019-01-01"  bindchange="bindDateChange1">
             <view class="date">
               {{formdata.date1}}
             </view>
           </picker>
           <span>-</span>
-          <picker mode="date" value="{{formdata.date2}}" start="2015-09-01" end="2050-09-01" bindchange="bindDateChange2">
+          <picker mode="date" value="{{formdata.date2}}" start="2019-01-01"  bindchange="bindDateChange2">
             <view class="date">
               {{formdata.date2}}
             </view>
