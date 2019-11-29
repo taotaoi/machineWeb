@@ -55,7 +55,7 @@ Component({
       if (tmp.date1 != "0000-00-00" && tmp.date2 != "0000-00-00") {
         console.log("select date on");
         var tmpArr = [];
-        for (let e of this.data.list) {
+        for (let e of this.data.tmp) {
           // 起始日期与e相同 或 结束日期与e相同
           var t1 = tmp.date1.substring(0, 10);
           var t2 = tmp.date2.substring(0, 10);

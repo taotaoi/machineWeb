@@ -1,6 +1,13 @@
 <!--pages/fix/fixend/list/list.wxml-->
-<navbar page-name="报修列表"></navbar>
+<navbar page-name="结束列表"></navbar>
+<searchbar myShow="{{searchShow}}" WCall="fixEndList" bind:searchReq="searchReq"></searchbar>
 <view class="page-list">
+<view class="header">
+    <view class="size">{{list.length}}</view>
+    <view class='menuico' bindtap="showMenu">
+      ...
+    </view>
+  </view>
    <view class="box">
         <ul wx:for="{{list}}" wx:key="{{item.fixid}}" bindtap="linkToShow" data-data="{{item.fixid}}">
           <li>

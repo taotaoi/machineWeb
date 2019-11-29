@@ -1,6 +1,13 @@
 <!--pages/fix/fixend/myList/myList.wxml-->
 <navbar page-name="我的结束"></navbar>
+<searchbar myShow="{{searchShow}}" WCall="myFixEnd" bind:searchReq="searchReq"></searchbar>
 <view class="page-list">
+<view class="header">
+    <view class="size">{{list.length}}</view>
+    <view class='menuico' bindtap="showMenu">
+      ...
+    </view>
+  </view>
   <view>{{(list.length
     <1)? '空': ''}}</view>
       <view class="box">
