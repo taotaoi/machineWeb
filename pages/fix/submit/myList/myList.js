@@ -166,16 +166,7 @@ Component({
     linkToShow(par) {
       var fixobj = par.currentTarget.dataset.data;
       // console.log(fixid);
-      if (fixobj.status == '报修中'){
-        tool.route("../show/show?id=" + fixobj.fixid);
-      }
-      else if (fixobj.status == '维修中'){
-        tool.route("../../fixing/show/show?id=" + fixobj.fixid);
-      }
-      else if (fixobj.status == '已结束'){
-        tool.route("../../fixend/show/show?id=" + fixobj.fixid);
-      }
-      
+        tool.route("../show/show?id=" + fixobj.fixid +"&status="+fixobj.status);
     },
     showMenu() {
       this.setData({

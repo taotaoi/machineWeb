@@ -20,7 +20,6 @@
       <view class='yuan'></view>
       <ul class="content">
         <view class='jiantou'></view>
-       
         <li>
         <view class="boxTitle"> 结束维修</view>
        <view class="bar" bindtap="del" ><icon type="cancel" size="20"/></view>
@@ -49,6 +48,7 @@
       </ul>
     </view>
     <!-- 结束维修box 结束 -->
+
     <!-- 2、开始维修box -->
     <view class='Box'>
       <view class='yuan'></view>

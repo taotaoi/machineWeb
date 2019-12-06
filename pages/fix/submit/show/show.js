@@ -2,6 +2,8 @@
 
 var tool = require('../../../tools/tool.js');
 var axSu = require('../../../ax/fix/submit.js');
+var axFixing = require('../../../ax/fix/fixing.js');
+var axFixEnd = require('../../../ax/fix/fixend.js');
 var axMa = require('../../../ax/machine/machine.js');
 var axCom = require('../../../ax/fix/comm.js'); // 查询状态
 Component({
@@ -17,12 +19,14 @@ Component({
    */
   data: {
     fixid:'',
-    submit:{},
+    status:'',
+    req:{},
     showTab: {
       tab1: true,
       tab2: false
     },
-    status:{
+    // 控制 三个状态的树形 信息框
+    showBox:{
       submit:false,
       fixing:false,
       fixend:false
@@ -36,34 +40,97 @@ Component({
   methods: {
     onLoad(par){
       this.setData({
-        fixid:par.id
+        fixid:par.id,
+        status:par.status
       });
       // console.log(par.id);
       this.init(this.data.fixid);
     },
     init(fixid){
       var that = this;
-      
-      wx.showLoading({
-        title: 'waiting',
-      });
-      axSu.getByFixId(fixid).then(function(data){
-        console.log(data);
-        
-        if(tool.chkRes(data)) return;
-        that.setData({
-          submit:data.data.data[0]
+      // 报修中
+      if(this.data.status == '报修中'){
+        this.setData({
+          'showBox.submit':true,
+          'showBox.fixing': false,
+          'showBox.fixend': false,
         });
-        // 设置 tab2 machine资料
-        return axMa.getByMaId(data.data.data[0].machineid);
-      }).then(function(data){
-        console.log(data);
-        if (tool.chkRes(data)) return;
-        wx.hideLoading();
-        that.setData({
-          ma: data.data.data[0]
+        wx.showLoading({
+          title: 'waiting',
         });
-      })
+        axSu.getByFixId(fixid).then(function (data) {
+          console.log(data);
+          if (tool.chkRes(data)) return;
+          that.setData({
+            req: data.data.data[0]
+          });
+          // 设置 tab2 machine资料
+          return axMa.getByMaId(data.data.data[0].machineid);
+        }).then(function (data) {
+          console.log(data);
+          if (tool.chkRes(data)) return;
+          wx.hideLoading();
+          that.setData({
+            ma: data.data.data[0]
+          });
+        })
+      }
+      // 状态 维修中
+      else if (this.data.status == '维修中') {
+        this.setData({
+          'showBox.submit': true,
+          'showBox.fixing': true,
+          'showBox.fixend': false,
+        });
+        wx.showLoading({
+          title: 'waiting',
+        });
+        axFixing.getByFixId(fixid).then(function(data){
+          console.log(data);
+          if (tool.chkRes(data)) return;
+          that.setData({
+            'req': data.data.data[0]
+          });
+          return axMa.getByMaId(data.data.data[0].machineid);
+        })
+      .then(function (data) {
+          console.log(data);
+          if (tool.chkRes(data)) return;
+          wx.hideLoading();
+          that.setData({
+            ma: data.data.data[0]
+          });
+        })
+      }
+      // 状态 已结束
+      else if (this.data.status == '已结束') {
+        this.setData({
+          'showBox.submit': true,
+          'showBox.fixing': true,
+          'showBox.fixend': true,
+        });
+        wx.showLoading({
+          title: 'waiting',
+        });
+        axFixEnd.getByFixId(fixid).then(function (data) {
+          console.log(data);
+
+          if (tool.chkRes(data)) return;
+          that.setData({
+            req: data.data.data[0]
+          });
+          // 设置 tab2 machine资料
+          return axMa.getByMaId(data.data.data[0].machineid);
+        }).then(function (data) {
+          console.log(data);
+          if (tool.chkRes(data)) return;
+          wx.hideLoading();
+          that.setData({
+            ma: data.data.data[0]
+          });
+        })
+      }
+     
     },
     tab1Btn() {
       this.setData({
@@ -78,6 +145,12 @@ Component({
           'showTab.tab1': false,
         })
       }
+    },
+    del() {
+      console.log("del:" + this.data.fixid);
+    },
+    update() {
+      console.log("update:" + this.data.fixid);
     },
   }
 })
