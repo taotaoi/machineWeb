@@ -1,6 +1,6 @@
 <!--pages/fix/fixing/list/list.wxml-->
 <navbar page-name="所有报修列表"></navbar>
-<searchbar myShow="{{searchShow}}" WCall="fixList" bind:searchReq="searchReq"></searchbar>
+<searchbar myShow="{{searchShow}}" WCall="fixingList" bind:searchReq="searchReq"></searchbar>
 <view class="page-list">
 <view class="header">
     <view class="size">{{list.length}}</view>

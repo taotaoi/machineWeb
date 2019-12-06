@@ -28,6 +28,12 @@ Component({
       date1:"0000-00-00",
       date2:"0000-00-00",
       status:{
+        show:{
+          submit: false,
+          fixing: false,
+          fixend: false
+        },
+        // 值
         submit: true,
         fixing: true,
         fixend: true
@@ -36,7 +42,24 @@ Component({
     }
   },
   ready() {
-    var that = this;
+    console.log(this.data.WCall);
+    // 1、设置状态选择的显示值
+    if (this.data.WCall == 'mySubmit'){
+      this.setData({
+        'formdata.status.show.submit': true,
+        'formdata.status.show.fixing': true,
+        'formdata.status.show.fixend': true,
+      })
+    }
+   else if (this.data.WCall == 'myFxing'){
+     console.log("myFxing");
+      this.setData({
+        'formdata.status.show.submit': false,
+        'formdata.status.show.fixing': true,
+        'formdata.status.show.fixend': true,
+      })
+    }
+    
     this.setData({
       navH: app.globa.navH
     });
@@ -46,6 +69,7 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    
     closeMenu() {
       console.log('close');
       this.setData({

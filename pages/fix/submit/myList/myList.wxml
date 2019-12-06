@@ -1,6 +1,6 @@
 <!--pages/fix/submit/myList/myList.wxml-->
 <navbar page-name="我的报修"></navbar>
-<searchbar myShow="{{searchShow}}" WCall="submit" bind:searchReq="searchReq"></searchbar>
+<searchbar myShow="{{searchShow}}" WCall="mySubmit" bind:searchReq="searchReq"></searchbar>
 
 <view class="page-list">
   <view class="header">

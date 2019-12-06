@@ -1,6 +1,6 @@
 <!--pages/fix/fixing/myList/myList.wxml-->
 <navbar page-name="我的维修"></navbar>
-<searchbar myShow="{{searchShow}}" bind:searchReq="searchReq" WCall="fixing"></searchbar>
+<searchbar myShow="{{searchShow}}" bind:searchReq="searchReq" WCall="myFxing"></searchbar>
 
 <view class="page-list">
   <view class="header">
