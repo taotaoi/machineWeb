@@ -15,58 +15,97 @@
 
   <!-- tab1页面内容 开始 -->
   <view class="tab1show" hidden="{{!showTab.tab1}}">
-    <!-- 1、故障维修box -->
-    <view class='Box'>
+    <!-- 1、结束维修box -->
+    <view class='Box' wx:if="{{showBox.fixend}}">
       <view class='yuan'></view>
       <ul class="content">
         <view class='jiantou'></view>
         <li>
-          <view class="boxTitle"> 开始维修</view>
-          <view class="bar" bindtap="del">
-            <icon type="cancel" size="20" />
+          <view class="boxTitle"> 结束维修</view>
+
+        </li>
+        <!-- 提交人信息 -->
+        <li class="submitUser">
+          <view class="title">结束维修人:
+            <view class="val">{{req.fixingname}}</view>
           </view>
-          <view class="bar" bindtap="update">
-            <icon type="info" size="20" />
+          <view class="Time">{{req.fixendday}}</view>
+        </li>
+        <!-- 故障描述 -->
+        <li class='breakDownAbout'>
+          <view class='title'>维修时常:</view>
+          <view class='val'>{{req.usedtime}}</view>
+        </li>
+        <li class="breakDownType">
+          <view class='title'>更换配件:</view>
+          <view class='val'>{{req.tools}}</view>
+        </li>
+        <li class="breakDownType">
+          <view class='title'>维修费用:</view>
+          <view class='val'>{{req.cost+"元"}}</view>
+        </li>
+      </ul>
+    </view>
+    <!-- 结束维修box 结束 -->
+
+    <!-- 2、开始维修box -->
+    <view class='Box' wx:if="{{showBox.fixing}}">
+      <view class='yuan'></view>
+      <ul class="content">
+        <view class='jiantou'></view>
+        <li>
+          <view class="boxTitle">故障报修</view>
+          <view wx:if="{{req.status=='维修中'}}">
+            <view class="bar" bindtap="del">
+              <icon type="cancel" size="20" />
+            </view>
+            <view class="bar" bindtap="update">
+              <icon type="info" size="20" />
+            </view>
           </view>
         </li>
         <!-- 提交人信息 -->
         <li class="submitUser">
           <view class="title">维修人:
-            <view class="val">{{fixing.fixingname}}</view>
+            <view class="val">{{req.fixingname}}</view>
           </view>
-          <view class="Time">{{fixing.fixday}}</view>
+          <view class="Time">{{req.fixday}}</view>
         </li>
         <!-- 故障描述 -->
         <li class='breakDownAbout'>
           <view class='title'>外委维修/内部维修:</view>
-          <view class='val'>{{fixing.whofix}}</view>
+          <view class='val'>{{req.whofix}}</view>
         </li>
       </ul>
     </view>
-    <!-- 故障维修box 结束 -->
+    <!-- 开始维修box 结束 -->
 
-    <!-- 2、故障报修box -->
-    <view class='Box'>
+    <!-- 3、故障报修box -->
+    <view class='Box' wx:if="{{showBox.submit}}">
       <view class='yuan'></view>
       <ul class="content">
         <view class='jiantou'></view>
-        <li class="boxTitle">故障报修</li>
+        <li>
+          <view class="boxTitle">故障报修</view>
+
+
+        </li>
         <!-- 提交人信息 -->
         <li class="submitUser">
           <view class="title">提交人:
-            <view class="val">{{fixing.submitname}}</view>
+            <view class="val">{{req.submitname}}</view>
           </view>
-          <view class="Time">{{fixing.submitdatetime}}</view>
+          <view class="Time">{{req.submitdatetime}}</view>
         </li>
         <!-- 故障描述 -->
         <li class='breakDownAbout'>
           <view class='title'>故障描述:</view>
-          <view class='val'>{{fixing.submitabout}}</view>
+          <view class='val'>{{req.submitabout}}</view>
         </li>
         <!-- 故障类型 -->
         <li class="breakDownType">
           <view class='title'>故障类型:</view>
-          <view class='val'>{{fixing.fixtype}}</view>
+          <view class='val'>{{req.fixtype}}</view>
         </li>
         <image src='{{myProcess.fixOBJ.submitimage}}' style='height:100px;width:96px;'></image>
       </ul>

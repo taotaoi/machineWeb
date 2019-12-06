@@ -137,14 +137,9 @@ Page({
     }
   },
   linkToShow(e){
-    var obj = e.currentTarget.dataset.data;
+    var fixobj = e.currentTarget.dataset.data;
     // console.log(fixid);
-    if(obj.status == "维修中"){
-      tool.route("../show/show?id=" + obj.fixid);
-    }
-    if (obj.status == "已结束"){
-      tool.route("../../fixend/show/show?id=" + obj.fixid);
-    }
+    tool.route("../show/show?id=" + fixobj.fixid + "&status=" + fixobj.status);
   },
   showMenu() {
     this.setData({
