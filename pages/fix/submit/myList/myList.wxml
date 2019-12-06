@@ -13,7 +13,7 @@
   <view>{{(list.length
     <1)? '空': ''}}</view>
       <view class="box">
-        <ul wx:for="{{list}}" wx:key="{{item.fixid}}" bindtap="linkToShow" data-data="{{item.fixid}}">
+        <ul wx:for="{{list}}" wx:key="{{item.fixid}}" bindtap="linkToShow" data-data="{{item}}">
           <li>
             <div class="machineName">{{item.name}}</div>
             <div class="machineStatus">{{item.status}}</div>

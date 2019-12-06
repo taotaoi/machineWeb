@@ -164,9 +164,18 @@ Component({
       }
     },
     linkToShow(par) {
-      var fixid = par.currentTarget.dataset.data;
+      var fixobj = par.currentTarget.dataset.data;
       // console.log(fixid);
-      tool.route("../show/show?id=" + fixid);
+      if (fixobj.status == '报修中'){
+        tool.route("../show/show?id=" + fixobj.fixid);
+      }
+      else if (fixobj.status == '维修中'){
+        tool.route("../../fixing/show/show?id=" + fixobj.fixid);
+      }
+      else if (fixobj.status == '已结束'){
+        tool.route("../../fixend/show/show?id=" + fixobj.fixid);
+      }
+      
     },
     showMenu() {
       this.setData({

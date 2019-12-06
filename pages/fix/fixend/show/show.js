@@ -74,4 +74,10 @@ Page({
       })
     }
   },
+  del() {
+    console.log("del:" + this.data.fixid);
+  },
+  update() {
+    console.log("update:" + this.data.fixid);
+  }
 })

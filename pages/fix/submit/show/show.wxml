@@ -23,8 +23,8 @@
         <view class='jiantou'></view>
         <li>
         <view class="boxTitle">故障报修</view>
-        <view class="bar">x</view>
-        <view class="bar">o</view>
+        <view class="bar" bindtap="del" ><icon type="cancel" size="20"/></view>
+        <view class="bar" bindtap="update"><icon type="info" size="20"/></view>
         </li>
         <!-- 提交人信息 -->
         <li class="submitUser">
