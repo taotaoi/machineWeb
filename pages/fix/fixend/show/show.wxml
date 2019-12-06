@@ -20,7 +20,12 @@
       <view class='yuan'></view>
       <ul class="content">
         <view class='jiantou'></view>
-        <li class="boxTitle">结束维修</li>
+       
+        <li>
+        <view class="boxTitle"> 结束维修</view>
+        <view class="bar">x</view>
+        <view class="bar">o</view>
+       </li>
         <!-- 提交人信息 -->
         <li class="submitUser">
           <view class="title">维修人:
