@@ -54,7 +54,7 @@
       <ul class="content">
         <view class='jiantou'></view>
         <li>
-          <view class="boxTitle">故障报修</view>
+          <view class="boxTitle">开始维修</view>
           <view wx:if="{{req.status=='维修中'}}">
             <view class="bar" bindtap="del">
               <icon type="cancel" size="20" />

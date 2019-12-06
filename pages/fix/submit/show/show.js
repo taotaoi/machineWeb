@@ -151,6 +151,7 @@ Component({
     },
     update() {
       console.log("update:" + this.data.fixid);
+      tool.route("../update/update?id=" + this.data.fixid);
     },
   }
 })

@@ -1,0 +1,51 @@
+<!--pages/fix/submit/update/update.wxml-->
+<navbar page-name="你当前页面的名字"></navbar>
+<view class='navTab'>
+  <ul>
+    <li class="{{showTab.tab1?'current':''}}" bindtap="tab1Btn">
+      报修
+    </li>
+    <li class="{{showTab.tab2?'current':''}}" bindtap="tab2Btn">
+      设备信息
+    </li>
+  </ul>
+</view>
+<!-- 顶部导航tab 结束 -->
+<!-- 报修 开始 -->
+<view class='page-submit' hidden="{{!showTab.tab1}}">
+  <form bindsubmit='btn'>
+    <input name='machineid' value='{{ma.machineid}}' hidden="true"></input>
+    <input name='submituser' value='{{user.id}}' hidden="true"></input>
+    <view class='box'>
+      <view class='row' style="position: relative;">
+        <inputsea show="{{searchBar}}" list="{{inputTmp}}" bind:comReq="comReq"></inputsea>
+        <view class='tag'>输入设备编号或名称</view>
+        <!-- 用来链接显示id name -->
+        <input class='val' bindinput="maIdWatch" value='{{ma.machineid}}'></input>
+      </view>
+      <view class='row'>
+        <view class='tag'>设备名称</view>
+        <input class='val' value='{{ma.name}}' disabled="true"></input>
+      </view>
+      <view class='row'>
+        <picker class='tag' bindchange="bindPickerChange" value="{{index}}" range="{{fixType}}">故障类别
+        </picker>
+        <input class='val' disabled="true" name='fixtype' value='{{fixTypeVal}}'></input>
+      </view>
+
+      <view class='row'>
+        <view class='tag'>故障描述</view>
+        <textarea style="height:100px;" name="submitabout"></textarea>
+      </view>
+      <button class='btn' form-type="submit">提交报修</button>
+    </view>
+
+  </form>
+</view>
+<!-- 报修 结束 -->
+
+<!-- 设备档案 开始 -->
+<view class="content" hidden="{{!showTab.tab2}}">
+ <ma ma="{{ma}}"></ma>
+</view>
+<!-- 设备档案 结束 -->
