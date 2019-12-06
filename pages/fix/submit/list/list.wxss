@@ -4,7 +4,7 @@ page {
   overflow: hidden;
 }
 .page-list {
-   height: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -30,9 +30,8 @@ page {
   flex-direction: column;
   overflow: scroll; 
 }
-
 .page-list ul {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   list-style: none;
   background-color: #fff;
