@@ -23,6 +23,53 @@ function submitAdd(data) {
   });
   return p;
 }
+function update(data){
+  var p = new Promise(function (req, rej) {
+    wx.request({
+      url: url,
+      method: 'POST',
+      data: {
+        main: 'update',
+        data: JSON.stringify(data)
+      },
+      header: {
+        // 'content-type': 'application/json' // 默认值
+        'Content-Type': "application/x-www-form-urlencoded"
+      },
+      success(res) {
+        req(res);
+      },
+      fail(err) {
+        rej(err);
+      }
+    });
+  });
+  return p;
+}
+
+function del(id){
+  var p = new Promise(function (req, rej) {
+    wx.request({
+      url: url,
+      method: 'POST',
+      data: {
+        main: 'del',
+        data: JSON.stringify({fixid:id})
+      },
+      header: {
+        // 'content-type': 'application/json' // 默认值
+        'Content-Type': "application/x-www-form-urlencoded"
+      },
+      success(res) {
+        req(res);
+      },
+      fail(err) {
+        rej(err);
+      }
+    });
+  });
+  return p;
+}
 
 function getAlllist(){
   var p = new Promise(function (req, rej) {
@@ -98,6 +145,8 @@ function getByUserId(data) {
 }
 
 exports.submitAdd = submitAdd;
+exports.update = update;
+exports.del = del;
 exports.getAlllist = getAlllist;
 exports.getByFixId = getByFixId;
 exports.getByUserId = getByUserId;

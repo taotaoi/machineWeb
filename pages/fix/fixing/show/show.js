@@ -29,6 +29,8 @@ Page({
       tab2: false,
       tab3: false
     },
+    // 控制修改、删除的功能显示
+    showBar: false,
   },
 
   /**
@@ -53,6 +55,7 @@ Page({
         'showBox.submit': true,
         'showBox.fixing': false,
         'showBox.fixend': false,
+        
       });
       wx.showLoading({
         title: 'waiting',
@@ -80,6 +83,7 @@ Page({
         'showBox.submit': true,
         'showBox.fixing': true,
         'showBox.fixend': false,
+        showBar: true // 开启删除 修改功能按钮
       });
       wx.showLoading({
         title: 'waiting',
@@ -129,6 +133,33 @@ Page({
         });
       })
     }
+    // 从list列表link过来，不启用修改功能
+    else {
+      this.setData({
+        'showBox.submit': true,
+        'showBox.fixing': true,
+        'showBox.fixend': false,
+      });
+      wx.showLoading({
+        title: 'waiting',
+      });
+      axFixing.getByFixId(fixid).then(function (data) {
+        console.log(data);
+        if (tool.chkRes(data)) return;
+        that.setData({
+          'req': data.data.data[0]
+        });
+        return axMa.getByMaId(data.data.data[0].machineid);
+      })
+        .then(function (data) {
+          console.log(data);
+          if (tool.chkRes(data)) return;
+          wx.hideLoading();
+          that.setData({
+            ma: data.data.data[0]
+          });
+        })
+    }
     
   },
   tab1Btn() {
@@ -150,5 +181,6 @@ Page({
   },
   update() {
     console.log("update:" + this.data.fixid);
+    tool.route("../update/update?id=" + this.data.fixid);
   }
 })

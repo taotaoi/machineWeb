@@ -9,6 +9,7 @@ Page({
    */
   data: {
     fixid: '',
+    status:'',
     user: {},
     ma: {
       id: ""
@@ -19,6 +20,8 @@ Page({
       tab2: false,
       tab3: false
     },
+    // 控制修改、删除的功能显示
+    showBar: false,
   },
 
   /**
@@ -79,5 +82,6 @@ Page({
   },
   update() {
     console.log("update:" + this.data.fixid);
+    tool.route("../update/update?id=" + this.data.fixid);
   }
 })

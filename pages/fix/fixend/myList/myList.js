@@ -46,7 +46,7 @@ Page({
   linkToShow(e) {
     var fixid = e.currentTarget.dataset.data;
     // console.log(fixid);
-    tool.route("../show/show?id=" + fixid);
+    tool.route("../show/show?id=" + fixid+"&status=mylist");
   },
   searchReq(e) {
     var tmp = e.detail;

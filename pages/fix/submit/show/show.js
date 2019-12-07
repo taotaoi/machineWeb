@@ -31,6 +31,8 @@ Component({
       fixing:false,
       fixend:false
     },
+    // 控制修改、删除的功能显示
+    showBar: false,
     ma:{machineid:''}
   },
 
@@ -54,6 +56,7 @@ Component({
           'showBox.submit':true,
           'showBox.fixing': false,
           'showBox.fixend': false,
+          showBar: true // 开启删除 修改功能按钮
         });
         wx.showLoading({
           title: 'waiting',
@@ -115,6 +118,33 @@ Component({
         axFixEnd.getByFixId(fixid).then(function (data) {
           console.log(data);
 
+          if (tool.chkRes(data)) return;
+          that.setData({
+            req: data.data.data[0]
+          });
+          // 设置 tab2 machine资料
+          return axMa.getByMaId(data.data.data[0].machineid);
+        }).then(function (data) {
+          console.log(data);
+          if (tool.chkRes(data)) return;
+          wx.hideLoading();
+          that.setData({
+            ma: data.data.data[0]
+          });
+        })
+      }
+      // 从list列表link过来，不启用修改功能
+      else{
+        this.setData({
+          'showBox.submit': true,
+          'showBox.fixing': false,
+          'showBox.fixend': false,
+        });
+        wx.showLoading({
+          title: 'waiting',
+        });
+        axSu.getByFixId(fixid).then(function (data) {
+          console.log(data);
           if (tool.chkRes(data)) return;
           that.setData({
             req: data.data.data[0]

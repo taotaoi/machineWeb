@@ -14,30 +14,29 @@
 <!-- 报修 开始 -->
 <view class='page-submit' hidden="{{!showTab.tab1}}">
   <form bindsubmit='btn'>
-    <input name='machineid' value='{{ma.machineid}}' hidden="true"></input>
+    <input name='fixid' value='{{req.fixid}}' hidden="true"></input>
     <input name='submituser' value='{{user.id}}' hidden="true"></input>
     <view class='box'>
       <view class='row' style="position: relative;">
-        <inputsea show="{{searchBar}}" list="{{inputTmp}}" bind:comReq="comReq"></inputsea>
         <view class='tag'>输入设备编号或名称</view>
         <!-- 用来链接显示id name -->
-        <input class='val' bindinput="maIdWatch" value='{{ma.machineid}}'></input>
+        <input class='val' disabled="true" value='{{req.machineid}}' style="color:rgba(0,0,0,.54)"></input>
       </view>
       <view class='row'>
         <view class='tag'>设备名称</view>
-        <input class='val' value='{{ma.name}}' disabled="true"></input>
+        <input class='val' value='{{req.name}}' disabled="true" style="color:rgba(0,0,0,.54)"></input>
       </view>
       <view class='row'>
         <picker class='tag' bindchange="bindPickerChange" value="{{index}}" range="{{fixType}}">故障类别
         </picker>
-        <input class='val' disabled="true" name='fixtype' value='{{fixTypeVal}}'></input>
+        <input class='val' disabled="true" name='fixtype' value='{{req.fixtype}}'></input>
       </view>
 
       <view class='row'>
         <view class='tag'>故障描述</view>
-        <textarea style="height:100px;" name="submitabout"></textarea>
+        <textarea style="height:100px;" name="submitabout" value="{{req.submitabout}}"></textarea>
       </view>
-      <button class='btn' form-type="submit">提交报修</button>
+      <button class='btn' form-type="submit">修改报修</button>
     </view>
 
   </form>
