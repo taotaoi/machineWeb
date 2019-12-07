@@ -19,29 +19,29 @@
 <!-- 结束 开始 tab1 -->
 <view class='page-submit' hidden="{{!showTab.tab1}}">
   <form bindsubmit='btn'>
-   
-     <input name='fixid' value='{{fixid}}' hidden="true"></input>
+   <input name="fixenduser" value='{{user.id}}' hidden="true"></input>
+     <input name='fixid' value='{{req.fixid}}' hidden="true"></input>
     <view class='box'>
       <view class='row'>
         <view class='tag'>维修时长</view>
-        <input type="number" class='val' name="usedtime" value=''></input>
+        <input type="number" class='val' name="usedtime" value='{{req.usedtime}}'></input>
       </view>
       <view class='row'>
         <view class='tag'>更换工具</view>
-        <input class='val' name="tools" value=''></input>
+        <input class='val' name="tools" value='{{req.tools}}'></input>
       </view>
             <view class='row'>
         <view class='tag'>维修费用</view>
-        <input class='val' name="cost" value=''></input>
+        <input class='val' name="cost" value='{{req.cost}}'></input>
       </view>
       <view class='row'>
         <view class='tag'>维修人员</view>
         <!-- 由userid控制回传 -->
-        <input class='val' name="fixenduser" value=""></input>
+        <input class='val'  value='{{user.name}}' disabled="true" style="color:rgba(0,0,0,.54)"></input>
       </view>
  <view class='row'>
         <view class='tag'>故障描述</view>
-        <textarea style="height:100px;" name="fixabout"></textarea>
+        <textarea style="height:100px;" name="fixabout" value="{{req.fixabout}}"></textarea>
       </view>
 
 

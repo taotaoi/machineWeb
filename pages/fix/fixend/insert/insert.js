@@ -32,7 +32,8 @@ Page({
       return;
     }
     this.setData({
-      fixid: par.id
+      fixid: par.id,
+      user: getApp().globalData.user
     });
     this.init();
   },

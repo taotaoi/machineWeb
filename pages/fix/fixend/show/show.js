@@ -33,11 +33,18 @@ Page({
       return;
     }
     this.setData({
-      fixid: par.id
+      fixid: par.id,
+      status:par.status
     });
     this.init();
   },
   init() {
+    if(this.data.status == 'mylist'){
+      this.setData({ showBar: true })
+    }else{
+      this.setData({ showBar: false })
+    }
+    
     var that = this;
     // 1、获取fixing信息
     wx.showLoading({

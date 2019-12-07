@@ -19,7 +19,7 @@
 <!-- 结束 开始 tab1 -->
 <view class='page-submit' hidden="{{!showTab.tab1}}">
   <form bindsubmit='btn'>
-   
+    <input name="fixenduser" value='{{user.id}}' hidden="true"></input>
      <input name='fixid' value='{{fixid}}' hidden="true"></input>
     <view class='box'>
       <view class='row'>
@@ -37,7 +37,7 @@
       <view class='row'>
         <view class='tag'>维修人员</view>
         <!-- 由userid控制回传 -->
-        <input class='val' name="fixenduser" value=""></input>
+        <input class='val'  value='{{user.name}}' disabled="true" style="color:rgba(0,0,0,.54)"></input>
       </view>
  <view class='row'>
         <view class='tag'>故障描述</view>

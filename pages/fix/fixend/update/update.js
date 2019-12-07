@@ -49,16 +49,16 @@ Component({
       wx.showLoading({
         title: 'waiting',
       })
-      axFixing.getByFixId(this.data.fixid).then(function (data) {
+      axFixEnd.getByFixId(fixid).then(function (data) {
         console.log(data);
         if (tool.chkRes(data)) {
           wx.hideLoading();
           return;
         }
         that.setData({
-          fixing: data.data.data[0]
+          req: data.data.data[0]
         });
-        return axMa.getByMaId(that.data.fixing.machineid);
+        return axMa.getByMaId(data.data.data[0].machineid);
       }).then(function (data) {
         // 2、获取machine 信息
         wx.hideLoading();
