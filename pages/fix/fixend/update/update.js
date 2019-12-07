@@ -106,6 +106,30 @@ Component({
         tool.msg("ERR", "describe 为空");
         return;
       }
+      if (tool.isNull(tmp.cost)) {
+        tool.msg("ERR", "describe 为空");
+        return;
+      }
+      if (tool.isNull(tmp.fixenduser)) {
+        tool.msg("ERR", "describe 为空");
+        return;
+      }
+
+      var that = this;
+      wx.showLoading({
+        title: 'waiting',
+      })
+      axFixEnd.update(tmp).then(function (res) {
+        wx.hideLoading();
+        console.log(res);
+        if (tool.chkRes(res)) return;
+        if (res.data.callbak.status == 'OK') {
+          tool.msgRout1("OK", res.data.callbak.msg, "../myList/myList");
+        }
+        else {
+          tool.msg("ERR", res.data.callbak.msg);
+        }
+      });
  
 
     },

@@ -23,7 +23,53 @@ function insert(data) {
   });
   return p;
 }
+function update(data) {
+  var p = new Promise(function (req, rej) {
+    wx.request({
+      url: url,
+      method: 'POST',
+      data: {
+        main: 'update',
+        data: JSON.stringify(data)
+      },
+      header: {
+        // 'content-type': 'application/json' // 默认值
+        'Content-Type': "application/x-www-form-urlencoded"
+      },
+      success(res) {
+        req(res);
+      },
+      fail(err) {
+        rej(err);
+      }
+    });
+  });
+  return p;
+}
 
+function del(id) {
+  var p = new Promise(function (req, rej) {
+    wx.request({
+      url: url,
+      method: 'POST',
+      data: {
+        main: 'del',
+        data: JSON.stringify({ fixid: id })
+      },
+      header: {
+        // 'content-type': 'application/json' // 默认值
+        'Content-Type': "application/x-www-form-urlencoded"
+      },
+      success(res) {
+        req(res);
+      },
+      fail(err) {
+        rej(err);
+      }
+    });
+  });
+  return p;
+}
 function getAllList() {
   var p = new Promise(function (req, rej) {
     wx.request({
@@ -145,6 +191,8 @@ function getBySubmitUser(data) {
   return p;
 }
 exports.insert = insert;
+exports.update = update;
+exports.del = del;
 exports.getAllList = getAllList;
 exports.getByFixId = getByFixId;
 exports.getByFixEndUser = getByFixEndUser;

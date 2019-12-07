@@ -79,6 +79,14 @@ Page({
       tool.msg("ERR", "describe 为空");
       return;
     }
+    if (tool.isNull(tmp.cost)) {
+      tool.msg("ERR", "describe 为空");
+      return;
+    }
+    if (tool.isNull(tmp.fixenduser)) {
+      tool.msg("ERR", "describe 为空");
+      return;
+    }
     var that = this;
     wx.showLoading({
       title: 'waiting',

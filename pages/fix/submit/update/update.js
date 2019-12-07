@@ -120,7 +120,12 @@ Component({
         wx.hideLoading();
         console.log(res);
         if(tool.chkRes(res)) return;
-        
+        if(res.data.callbak.status == 'OK'){
+          tool.msgRout1("OK", res.data.callbak.msg,"../myList/myList");  
+        }
+        else{
+          tool.msg("ERR", res.data.callbak.msg);
+        }
       });
     },
 

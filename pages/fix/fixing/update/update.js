@@ -104,7 +104,21 @@ Component({
         return;
       }
 
-    
+      var that = this;
+      wx.showLoading({
+        title: 'waiting',
+      })
+      axFixing.update(data).then(function (res) {
+        wx.hideLoading();
+        console.log(res);
+        if (tool.chkRes(res)) return;
+        if (res.data.callbak.status == 'OK') {
+          tool.msgRout1("OK", res.data.callbak.msg, "../myList/myList");
+        }
+        else {
+          tool.msg("ERR", res.data.callbak.msg);
+        }
+      });
     },
   }
 })
